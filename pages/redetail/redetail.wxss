@@ -1,0 +1,129 @@
+page {
+    background-color: #F7F7FA;
+}
+
+.container {
+    display: flex;
+}
+
+.red_top_view {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.red_top {
+    height: 152rpx;
+    width: 100%;
+}
+
+.red_avatar {
+    width: 118rpx;
+    height: 118rpx;
+    margin: -65rpx auto 0 auto;
+    border-radius: 59rpx;
+}
+
+.red_name {
+    color: #313541;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    margin: 21rpx 0 0 0;
+}
+
+.red_money_view {
+    margin: 32rpx auto 0 auto;
+    display: flex;
+    width: 400rpx;
+    flex-direction: row;
+}
+
+.red_money {
+    color: #313541;
+    font-size: 96rpx;
+    font-weight: bold;
+    line-height: 135rpx;
+    margin-left: auto;
+}
+
+.red_money_unit {
+    color: #313541;
+    font-size: 24rpx;
+    line-height: 33rpx;
+    margin: auto auto 30rpx 11rpx;
+}
+
+.red_over_money {
+    color: #313541;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    margin: 32rpx auto 0 auto;
+}
+
+.red_withdraw {
+    color: #5171B0;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    margin: 32rpx auto;
+    border: 2rpx solid #5171B0;
+    border-radius: 6rpx;
+    padding: 13rpx 0;
+    width: 192rpx;
+    text-align: center;
+}
+
+.red_get_num {
+    margin: 40rpx auto 12rpx 48rpx;
+    color: #8091A5;
+    font-size: 30rpx;
+    line-height: 42rpx;
+}
+
+.bottom {
+    margin: 0 24rpx 24rpx 24rpx;
+    background-color: white;
+    padding-bottom: 32rpx;
+}
+
+.bottom-cell {
+    display: flex;
+    flex-direction: column;
+    margin: 35rpx 24rpx 0 24rpx;
+}
+
+.bottom-cell-view {
+    height: 81rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.bottom-cell-avatar {
+    width: 81rpx;
+    height: 81rpx;
+    border-radius: 40rpx;
+    border: 1rpx solid #c2c2c2;
+    margin: 0 0 auto 0;
+}
+
+.bottom-cell-name {
+    margin: auto auto auto 34rpx;
+    overflow: hidden;
+    line-height: 42rpx;
+    font-size: 30rpx;
+    color: #313541;
+}
+
+.bottom-money {
+    color: #313541;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    margin: auto 0 auto auto;
+}
+
+.bottom-cell-date {
+    color: #B0BAC5;
+    font-size: 24rpx;
+    line-height: 33rpx;
+    margin: 4.5rpx auto 12rpx 120rpx;
+}

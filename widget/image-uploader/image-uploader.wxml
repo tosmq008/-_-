@@ -1,0 +1,15 @@
+<template name="image-uploader">
+    <view class="uploader-cell">
+        <view class="uploader-cell-body">
+            <view class="uploader-files">
+                <view class="uploader-file" wx:for="{{uploadedImagesPaths}}" wx:for-index="idx" wx:for-item="image">
+                    <image bindtap="{{_previewImage}}" class="uploader-img" data-src="{{image.uploadurl}}" mode="aspectFill" src="{{image.source||image.uploadurl+'?imageView2/1/w/128/h/128/q/75|imageslim'}}"></image>
+                    <image bindtap="{{_deleteImage}}" class="uploader-img-del" data-index="{{idx}}" src="../../images/close.png"></image>
+                </view>
+            </view>
+            <view class="uploader-inputbox" wx:if="{{uploadedImagesPaths.length<=8}}">
+                <image bindtap="{{_chooseImage}}" class="uploader-input" src="../../images/add-img-icon.png"></image>
+            </view>
+        </view>
+    </view>
+</template>

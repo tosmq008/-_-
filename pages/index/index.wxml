@@ -1,0 +1,60 @@
+<import src="../../components/component.wxml"></import>
+<view class="authorization-view" wx:if="{{!hasAuthorized}}">
+    <image src="../../images/logo.png"></image>
+    <text>小程序需要您的微信授权才能使用哦~</text>
+    <button bindgetuserinfo="requestGetUserInfo" bindtap="requestAuthorization" openType="getUserInfo">请授权</button>
+</view>
+<block wx:else>
+    <view class="switch">
+        <view bindtap="bindSentTap" class="switch-tab">
+            <view class="switch-text {{tab=='recv'?'text-unselected':''}}">发件箱1{{recvList.length}}</view>
+            <view animation="{{lineAnime}}" class="switch-underline" wx:if="{{true||tab=='sent'}}"></view>
+        </view>
+        <view bindtap="bindRecvTap" class="switch-tab">
+            <view class="switch-text {{tab=='sent'?'text-unselected':''}}">收件箱2</view>
+        </view>
+    </view>
+    
+    <view class="content" wx:if="{{tab=='recv'}}">
+        <view bindtap="reRequestRecv" class="network-error-view" wx:if="{{isNetworkErrorRecv}}">
+            <image src="../../images/reload.png"></image>
+            <text>网络出错</text>
+            <text>轻触屏幕重新加载</text>
+        </view>
+
+
+        <view class="no-view" wx:if="{{recvList.length==0}}">
+            <image src="http://ntc-qn.jianjian.tv/welcome.png"></image>
+        </view>
+        <view class="container" wx:else>
+            <view class="template_all_view" wx:for="{{recvList}}" wx:key="id">
+                <template is="eachItem" data="{{item:item}}"></template>
+            </view>
+        </view>
+        <view class="index-bottom">
+            <button class="contact-button" openType="contact" plain="true">联系客服</button>
+        </view>
+    </view>
+    <view class="content" wx:else>
+        <view bindtap="reRequestSent" class="network-error-view" wx:if="{{isNetworkErrorSent}}">
+            <image src="../../images/reload.png"></image>
+            <text>网络出错</text>
+            <text>轻触屏幕重新加载</text>
+        </view>
+        <view class="no-view" wx:if="{{sentList.length==0}}">
+            <image src="http://ntc-qn.jianjian.tv/welcome.png"></image>
+        </view>
+        <view class="container" wx:else>
+            <view class="template_all_view" wx:for="{{sentList}}" wx:key="id">
+                <template is="eachItem" data="{{item:item}}"></template>
+            </view>
+        </view>
+        <view class="index-bottom">
+            <button class="contact-button" openType="contact" plain="true">联系客服</button>
+        </view>
+    </view>
+    <view hover bindtap="bindAddTap" class="add-button" hoverClass="default-btn-hover" wx:if="{{true||tab=='sent'}}">
+        <image src="../../images/index-add.png"></image>
+        <text>发布</text>
+    </view>
+</block>

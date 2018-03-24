@@ -1,0 +1,241 @@
+@import "../../widget/image-uploader/image-uploader.wxss";
+
+.textarea-placeholder,.input-placeholder {
+    color: #B0BAC5;
+}
+
+.container {
+    padding-bottom: 99rpx;
+}
+
+.red-text {
+    color: red!important;
+}
+
+.title-container {
+    margin: 0 24rpx 0 24rpx;
+    background-color: white;
+    height: 112rpx;
+}
+
+.title-input {
+    height: 110rpx;
+    margin: 0 24rpx;
+    font-size: 44rpx;
+    color: #666666;
+    border-bottom: 1rpx solid #dcdcdc;
+}
+
+.content-container {
+    margin: 0 24rpx 0 24rpx;
+    background-color: white;
+    height: 360rpx;
+    position: relative;
+}
+
+.content-num {
+    color: #B0BAC5;
+    font-size: 24rpx;
+    line-height: 33rpx;
+    position: absolute;
+    right: 8rpx;
+    bottom: 8rpx;
+}
+
+.content-textarea {
+    padding: 36rpx 24rpx 24rpx 24rpx;
+    font-size: 32rpx;
+    color: #666666;
+    width: 654rpx;
+}
+
+.info-container {
+    margin: 32rpx 24rpx 76rpx 24rpx;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.top-cell-view {
+    background-color: #fff;
+    margin: 25rpx 24rpx 0 24rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: white;
+}
+
+.cell-view {
+    margin: auto 0;
+    padding: 0 24rpx;
+    height: 112rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+}
+
+.number-hint {
+    background-color: white;
+    color: #B0BAC5;
+    font-size: 24rpx;
+    line-height: 33rpx;
+}
+
+.keywords-detail {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 30px;
+}
+
+.keywords-detail text {
+    background-color: white;
+    color: #B0BAC5;
+    font-size: 30rpx;
+    line-height: 33rpx;
+    max-height: 33rpx;
+    max-width: 400rpx;
+    margin-right: 10rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.input-name {
+    text-align: right;
+    flex-grow: 1;
+    color: #666666;
+}
+
+picker {
+    height: 50%;
+}
+
+.time-view {
+    height: 88rpx;
+    margin: 0 24rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text-gray {
+    font-size: 30rpx;
+    color: #B0BAC5;
+}
+
+.text-black {
+    font-size: 30rpx;
+    color: #313541;
+}
+
+.text-three {
+    font-size: 30rpx;
+}
+
+.guest-container {
+    margin: 32rpx 24rpx 0 24rpx;
+    background-color: white;
+    height: 176rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.location-hint {
+    background-color: white;
+    color: #B0BAC5;
+    font-size: 24rpx;
+    line-height: 33rpx;
+}
+
+.location-active {
+    background-color: white;
+    font-size: 24rpx;
+    line-height: 33rpx;
+}
+
+.add-image {
+    height: 90rpx;
+    background-color: #FFFFFF;
+    display: flex;
+    padding-left: 24rpx;
+    margin: 0 24rpx;
+}
+
+.add-image text {
+    color: #03A9F4;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    margin: auto 0;
+}
+
+button::after {
+    border: 0 solid transparent;
+}
+
+.top {
+    padding: 0 0 0 0;
+    background-color: white;
+}
+
+.content_view {
+    background-color: #fff;
+    margin: 0 24rpx;
+}
+
+.header-title-image {
+    margin: 0 0;
+    width: 654rpx;
+    height: 382rpx;
+}
+
+.header-title-image-205 {
+    margin: 0 auto;
+    width: 702rpx;
+    height: 518rpx;
+}
+
+.header-title-image-220 {
+    margin: 0 0;
+    width: 702rpx;
+    height: 405rpx;
+}
+
+.header-hint {
+    font-size: 32rpx;
+    color: #313541;
+    display: flex;
+    align-items: center;
+    height: 45rpx;
+    position: absolute;
+    width: 654rpx;
+    top: 290rpx;
+}
+
+.document_num {
+    margin: 0 auto;
+    font-size: 24rpx;
+    line-height: 33rpx;
+}
+
+.change-model {
+    margin: 10rpx 24rpx 22rpx auto;
+    background-color: #03a9f4;
+    border-radius: 5rpx;
+    width: 128rpx;
+    height: 58rpx;
+    display: flex;
+}
+
+.change-model text {
+    font-size: 24rpx;
+    line-height: 26rpx;
+    color: white;
+    margin: auto auto;
+}
+
+.placeholder-class {
+    color: #c7c7c7;
+}

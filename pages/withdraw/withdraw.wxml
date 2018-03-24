@@ -1,0 +1,32 @@
+<view class="container" wx:if="{{hasAuthorized}}">
+    <view bindtap="reRequest" class="network-error-view" wx:if="{{isNetworkError}}">
+        <image src="../../images/reload.png"></image>
+        <text>网络出错</text>
+        <text>轻触屏幕重新加载</text>
+    </view>
+    <form bindsubmit="formSubmit" reportSubmit="true" wx:else>
+        <view class="bg">
+            <text class="all-money">￥{{allMoney}}</text>
+            <text class="all-money-hint">账户余额</text>
+            <view class="money-view">
+                <text class="money-hint">总金额:</text>
+                <input bindinput="bindMoneyInput" class="money-num" focus="true" name="money" placeholder="输入金额" placeholderClass="placeholder-class" type="digit" value="{{payMoney}}"></input>
+                <text class="money-unit">元</text>
+            </view>
+            <view class="hint-view">
+                <text class="number-hint">提现金额最少为1元</text>
+                <text bindtap="allPayTap" class="all-pay">全部提现</text>
+            </view>
+            <button class="withdraw" formType="submit" size="default" type="primary">确认提现</button>
+            <view class="bottom">
+                <text bindtap="historyTap" class="history">历史记录</text>
+                <text bindtap="faqTap" class="issue">常见问题</text>
+            </view>
+        </view>
+    </form>
+</view>
+<view class="authorization-view" wx:else>
+    <image src="../../images/logo.png"></image>
+    <text>小程序需要您的微信授权才能使用哦~</text>
+    <button bindgetuserinfo="requestGetUserInfo" bindtap="requestAuthorization" openType="getUserInfo">请授权</button>
+</view>

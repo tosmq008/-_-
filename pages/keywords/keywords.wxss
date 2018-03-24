@@ -1,0 +1,77 @@
+page {
+    background-color: #F7F7FA;
+}
+
+.container {
+    display: flex;
+}
+
+.key-title {
+    color: #B0BAC5;
+    font-size: 24rpx;
+    line-height: 33rpx;
+    margin: 32rpx 32rpx 24rpx 32rpx;
+}
+
+.key-input-view {
+    height: 112rpx;
+    margin: 0 32rpx;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+}
+
+.title-input {
+    padding: 0 32rpx;
+    height: 100%;
+    width: 100%;
+    color: #5171B0;
+    font-size: 30rpx;
+    line-height: 42rpx;
+}
+
+.placeholder-class {
+    color: #B0BAC5;
+    font-size: 30rpx;
+    line-height: 42rpx;
+}
+
+.btn-add {
+    height: 112rpx;
+    width: 150rpx;
+    display: flex;
+}
+
+.btn-add text {
+    color: #FFFFFF;
+    font-size: 30rpx;
+    line-height: 45rpx;
+    margin: auto auto;
+}
+
+.show-key {
+    margin: 32rpx 7rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.each-key {
+    margin: 0 25rpx;
+    display: flex;
+    flex-direction: row;
+    height: 50rpx;
+}
+
+.each-key text {
+    color: #5171B0;
+    font-size: 30rpx;
+    line-height: 45rpx;
+    margin: auto 10rpx auto 0;
+}
+
+.each-key image {
+    height: 30rpx;
+    width: 30rpx;
+    margin: auto 0;
+}

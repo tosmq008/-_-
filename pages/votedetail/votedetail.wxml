@@ -1,0 +1,91 @@
+<view class="container {{deleted?'deleted-overflow-hidden':''}}" style="{{!voted&&!outdate&&!deleted?'margin-bottom: 99rpx;':'margin-bottom: 20rpx;'}}" wx:if="{{hasAuthorized}}">
+    <view bindtap="reRequest" class="network-error-view" wx:if="{{isNetworkError}}">
+        <image src="../../images/reload.png"></image>
+        <text>网络出错</text>
+        <text>轻触屏幕重新加载</text>
+    </view>
+    <block wx:else>
+        <view class="{{share_wrap}}" style="z-index: 100;">
+            <view class="{{mask_cls}}">
+                <view class="group-share__circle-wrap">
+                    <view class="group-share__circle group-share__circle_1"></view>
+                    <view class="group-share__circle group-share__circle_2"></view>
+                    <view class="group-share__circle group-share__circle_3"></view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{outdate&&!deleted}}">
+            <image class="outdate-view" src="../../images/outdate.png"></image>
+        </view>
+        <view class="content" wx:if="{{!deleted}}">
+            <view class="content-title-view">
+                <view class="content-title {{deleted||outdate?'deleted-text':''}}">{{title}}</view>
+            </view>
+            <view class="content-desc-view">
+                <text class="content-desc {{deleted||outdate?'deleted-text':''}}"> {{content}}</text>
+                <text class="{{deleted||outdate?'deleted-text':''}}"> {{subtitle}}</text>
+            </view>
+            <view class="content-attch">
+                <view class="mul {{deleted?'deleted-text':''}}">{{mul}}</view>
+                <view class="voters {{deleted?'deleted-text':''}}">已有{{voters}}人参与</view>
+            </view>
+            <block wx:for="{{options}}" wx:for-item="vote">
+                <view bindtap="{{deleted||outdate?'':'binditemTap'}}" class="item-{{vote.voted}} {{deleted&&vote.voted?'deleted-true':''}}" data-index="{{index}}" data-vote="{{vote}}">
+                    <view class="item-content-view">
+                        <text class="item-content {{deleted?'deleted-text':''}}">{{vote.content}}</text>
+                        <icon class="item-checkmark checkmark-anim" color="{{deleted?'#d9d9d9':'#03A9F4'}}" type="success_no_circle" wx:if="{{vote.voted}}"></icon>
+                    </view>
+                    <text class="item-number {{deleted?'deleted-text':''}}" wx:if="{{voted||isAuthor}}">{{vote.voters}} 票</text>
+                    <text class="item-percentage {{deleted?'deleted-text':''}}" wx:if="{{voted||isAuthor}}">{{vote.percentage}}% </text>
+                    <view class="item-background" style="width:{{vote.percentage}}%;" wx:if="{{voted||isAuthor}}">
+                        <view class="progress-anime"></view>
+                    </view>
+                </view>
+                <view class="vote-user-view">
+                    <view bindtap="{{deleted?'':'bindiconTap'}}" class="vote-user-each" data-index="{{index}}" data-indexicon="{{indexicon}}" wx:for="{{vote.voter_li}}" wx:for-index="indexicon" wx:for-item="each">
+                        <image class="vote-user-avatar" src="{{each.avatar}}"></image>
+                        <text class="vote-user-name" wx:if="{{each.show}}">{{each.nickname}}</text>
+                    </view>
+                </view>
+            </block>
+            <text class="author {{deleted?'deleted-text':''}}">发起人:{{inscribe}}</text>
+        </view>
+        <view class="delete-bg" wx:else>
+            <image class="delete-ntc" src="../../images/delete-vote.png"></image>
+        </view>
+        <view style="height:60px;width:100%" wx:if="{{showHint}}"></view>
+        <view class="menu" wx:if="{{!showHint}}">
+            <view class="menu-left">
+                <view class="menu-left-border" hoverClass="default-view-hover">
+                    <button bindtap="bindIntroducetionTap" id="menu-about">这是什么</button>
+                </view>
+            </view>
+            <view>
+                <view class="menu-left-border {{deleted?'deleted-border':''}}" hoverClass="default-view-hover">
+                    <button bindtap="{{deleted?'':'bindShareTap'}}" class="{{deleted?'deleted-text':''}}" id="menu-share" openType="{{deleted?'':'share'}}">{{shareHint}}</button>
+                </view>
+            </view>
+            <view class="menu-right">
+                <view class="menu-right-border" hoverClass="default-view-hover">
+                    <view bindtap="bindUpdateTap" id="menu-create">{{isAuthor?'编辑投票':'我也要发群投票'}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="jianjian-msg">
+            <text>群里有事是一款用于发布群通知、群活动、群投票的小程序。
+
+鉴鉴科技版权所有
+©2017 Jianjian Inc. All Rights Reserved</text>
+        </view>
+    </block>
+    <view class="add-button" wx:if="{{!voted&&!outdate&&!deleted}}">
+        <button bindtap="{{hint==1?'bindShareTap':deleted?'':'bindSaveTap'}}" class="default-btn {{hint==0&&!enable?'btn-disable':''}}" hoverClass="{{hint==0&&!enable?'':'default-btn-hover'}}" openType="{{hint==0||deleted?'':'share'}}" size="default">
+       {{hint==1?postHint:'确定'}}
+      </button>
+    </view>
+</view>
+<view class="authorization-view" wx:else>
+    <image src="../../images/logo.png"></image>
+    <text>小程序需要您的微信授权才能使用哦~</text>
+    <button bindgetuserinfo="requestGetUserInfo" bindtap="requestAuthorization" openType="getUserInfo">请授权</button>
+</view>

@@ -1,0 +1,423 @@
+<template name="template6">
+    <block :if="{{item.tag=='block'}}">
+        <view class="{{item.style?'markdown-'+item.style:''}}">
+            <template is="template6" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+        </view>
+    </block>
+    <block
+        :elif="{{item.tag=='inline'}}" :for="{{item.children}}" :key="index">
+        <template is="markdownImage" data="{{item:item}}"
+                  :if="{{item.tag=='image'}}"></template>
+        <view class="markdown-break"
+              :elif="{{item.tag=='break'}}"></view>
+        <view bindtap="markdownTelTap" class="markdown-text" data-tel="{{item.content}}"
+              :elif="{{item.tag=='tel'}}">
+            <text class="markdown-tel">{{item.content}}</text>
+        </view>
+        <view class="markdown-text"
+              :else>
+            <text class="{{item.tag?'markdown-'+item.tag:''}}">{{item.content}}</text>
+        </view>
+    </block>
+    <block :elif="{{item.tag=='table'}}">
+        <view class="markdown-table">
+            <template is="template6" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+        </view>
+    </block>
+    <block
+       :elif="{{item.tag=='tbody'}}">
+        <view class="markdown-tbody"
+        >
+            <template is="template6" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+        </view>
+
+    </block>
+
+    <view class="markdown-thead"
+          :elif="{{item.tag=='thead'}}">
+        <template is="template6" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+    </view>
+    <view class="markdown-td"
+          :elif="{{item.tag=='td'}}">
+        <template is="template6" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+    </view>
+    <view class="markdown-tr"
+          :elif="{{item.tag=='tr'}}">
+        <template is="template6" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+    </view>
+    <view class="markdown-th"
+          :elif="{{item.tag=='th'}}">
+        <template is="template6" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+    </view>
+    <view class="markdown-ul" :elif="{{item.tag=='bullet-list'}}">
+        <template is="template6" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+    </view>
+    <view class="markdown-li" :elif="{{item.tag=='list-item'}}">
+        <template is="template6" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+    </view>
+    <view class="markdown-ol" :elif="{{item.tag=='ordered-list'}}">
+        <template is="template6" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+    </view>
+    <view class="markdown-break" :elif="{{item.tag=='break'}}"></view>
+    <template is="markdownVideo" data="{{item:item}}" :elif="{{item.tag=='video'}}"></template>
+    <template is="markdownImage" data="{{item:item}}" :elif="{{item.tag=='image'}}"></template>
+    <template is="markdownAudio" data="{{item:item}}" :elif="{{item.tag=='audio'}}"></template>
+    <template is="markdownFile" data="{{item:item}}" :elif="{{item.tag=='file'}}"></template>
+    <view class="markdown-map" :if="{{item.longitude&&item.latitude}}" :elif="{{item.tag=='loc'}}">
+        <map bindmarkertap="markdownMapMarkerTap" bindtap="markdownMapTap" class="map" latitude="{{item.latitude}}"
+             longitude="{{item.longitude}}" markers="{{item.markers}}" scale="14" showLocation="true"></map>
+    </view>
+    <view class="markdown-hr" :elif="{{item.tag==='hr'}}"></view>
+</template>
+<template name="template5">
+<view class="{{item.style?'markdown-'+item.style:''}}" :if="{{item.tag=='block'}}">
+    <template is="template6" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<block :for="{{item.children}}" :key="index" :elif="{{item.tag=='inline'}}">
+    <template is="markdownImage" data="{{item:item}}" :if="{{item.tag=='image'}}"></template>
+    <view class="markdown-break" :elif="{{item.tag=='break'}}"></view>
+    <view bindtap="markdownTelTap" class="markdown-text" data-tel="{{item.content}}" :elif="{{item.tag=='tel'}}">
+        <text class="markdown-tel">{{item.content}}</text>
+    </view>
+    <view class="markdown-text" :else>
+        <text class="{{item.tag?'markdown-'+item.tag:''}}">{{item.content}}</text>
+    </view>
+</block>
+<view class="markdown-table" :elif="{{item.tag=='table'}}">
+    <template is="template6" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-tbody" :elif="{{item.tag=='tbody'}}">
+    <template is="template6" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-thead" :elif="{{item.tag=='thead'}}">
+    <template is="template6" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-td" :elif="{{item.tag=='td'}}">
+    <template is="template6" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-tr" :elif="{{item.tag=='tr'}}">
+    <template is="template6" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-th" :elif="{{item.tag=='th'}}">
+    <template is="template6" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-ul" :elif="{{item.tag=='bullet-list'}}">
+    <template is="template6" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-li" :elif="{{item.tag=='list-item'}}">
+    <template is="template6" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-ol" :elif="{{item.tag=='ordered-list'}}">
+    <template is="template6" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-break" :elif="{{item.tag=='break'}}"></view>
+<template is="markdownVideo" data="{{item:item}}" :elif="{{item.tag=='video'}}"></template>
+<template is="markdownImage" data="{{item:item}}" :elif="{{item.tag=='image'}}"></template>
+<template is="markdownAudio" data="{{item:item}}" :elif="{{item.tag=='audio'}}"></template>
+<template is="markdownFile" data="{{item:item}}" :elif="{{item.tag=='file'}}"></template>
+<view class="markdown-map" :if="{{item.longitude&&item.latitude}}" :elif="{{item.tag=='loc'}}">
+    <map bindmarkertap="markdownMapMarkerTap" bindtap="markdownMapTap" class="map" latitude="{{item.latitude}}"
+         longitude="{{item.longitude}}" markers="{{item.markers}}" scale="14" showLocation="true"></map>
+</view>
+<view class="markdown-hr" :elif="{{item.tag==='hr'}}"></view>
+</template>
+<template name="template4">
+<view class="{{item.style?'markdown-'+item.style:''}}" :if="{{item.tag=='block'}}">
+    <template is="template5" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<block :for="{{item.children}}" :key="index" :elif="{{item.tag=='inline'}}">
+    <template is="markdownImage" data="{{item:item}}" :if="{{item.tag=='image'}}"></template>
+    <view class="markdown-break" :elif="{{item.tag=='break'}}"></view>
+    <view bindtap="markdownTelTap" class="markdown-text" data-tel="{{item.content}}" :elif="{{item.tag=='tel'}}">
+        <text class="markdown-tel">{{item.content}}</text>
+    </view>
+    <view class="markdown-text" :else>
+        <text class="{{item.tag?'markdown-'+item.tag:''}}">{{item.content}}</text>
+    </view>
+</block>
+<view class="markdown-table" :elif="{{item.tag=='table'}}">
+    <template is="template5" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-tbody" :elif="{{item.tag=='tbody'}}">
+    <template is="template5" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-thead" :elif="{{item.tag=='thead'}}">
+    <template is="template5" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-td" :elif="{{item.tag=='td'}}">
+    <template is="template5" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-tr" :elif="{{item.tag=='tr'}}">
+    <template is="template5" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-th" :elif="{{item.tag=='th'}}">
+    <template is="template5" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-ul" :elif="{{item.tag=='bullet-list'}}">
+    <template is="template5" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-li" :elif="{{item.tag=='list-item'}}">
+    <template is="template5" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-ol" :elif="{{item.tag=='ordered-list'}}">
+    <template is="template5" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-break" :elif="{{item.tag=='break'}}"></view>
+<template is="markdownVideo" data="{{item:item}}" :elif="{{item.tag=='video'}}"></template>
+<template is="markdownImage" data="{{item:item}}" :elif="{{item.tag=='image'}}"></template>
+<template is="markdownAudio" data="{{item:item}}" :elif="{{item.tag=='audio'}}"></template>
+<template is="markdownFile" data="{{item:item}}" :elif="{{item.tag=='file'}}"></template>
+<view class="markdown-map" :if="{{item.longitude&&item.latitude}}" :elif="{{item.tag=='loc'}}">
+    <map bindmarkertap="markdownMapMarkerTap" bindtap="markdownMapTap" class="map" latitude="{{item.latitude}}"
+         longitude="{{item.longitude}}" markers="{{item.markers}}" scale="14" showLocation="true"></map>
+</view>
+<view class="markdown-hr" :elif="{{item.tag==='hr'}}"></view>
+</template>
+<template name="template3">
+<view class="{{item.style?'markdown-'+item.style:''}}" :if="{{item.tag=='block'}}">
+    <template is="template4" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<block :for="{{item.children}}" :key="index" :elif="{{item.tag=='inline'}}">
+    <template is="markdownImage" data="{{item:item}}" :if="{{item.tag=='image'}}"></template>
+    <view class="markdown-break" :elif="{{item.tag=='break'}}"></view>
+    <view bindtap="markdownTelTap" class="markdown-text" data-tel="{{item.content}}" :elif="{{item.tag=='tel'}}">
+        <text class="markdown-tel">{{item.content}}</text>
+    </view>
+    <view class="markdown-text" :else>
+        <text class="{{item.tag?'markdown-'+item.tag:''}}">{{item.content}}</text>
+    </view>
+</block>
+<view class="markdown-table" :elif="{{item.tag=='table'}}">
+    <template is="template4" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-tbody" :elif="{{item.tag=='tbody'}}">
+    <template is="template4" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-thead" :elif="{{item.tag=='thead'}}">
+    <template is="template4" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-td" :elif="{{item.tag=='td'}}">
+    <template is="template4" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-tr" :elif="{{item.tag=='tr'}}">
+    <template is="template4" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-th" :elif="{{item.tag=='th'}}">
+    <template is="template4" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-ul" :elif="{{item.tag=='bullet-list'}}">
+    <template is="template4" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-li" :elif="{{item.tag=='list-item'}}">
+    <template is="template4" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-ol" :elif="{{item.tag=='ordered-list'}}">
+    <template is="template4" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-break" :elif="{{item.tag=='break'}}"></view>
+<template is="markdownVideo" data="{{item:item}}" :elif="{{item.tag=='video'}}"></template>
+<template is="markdownImage" data="{{item:item}}" :elif="{{item.tag=='image'}}"></template>
+<template is="markdownAudio" data="{{item:item}}" :elif="{{item.tag=='audio'}}"></template>
+<template is="markdownFile" data="{{item:item}}" :elif="{{item.tag=='file'}}"></template>
+<view class="markdown-map" :if="{{item.longitude&&item.latitude}}" :elif="{{item.tag=='loc'}}">
+    <map bindmarkertap="markdownMapMarkerTap" bindtap="markdownMapTap" class="map" latitude="{{item.latitude}}"
+         longitude="{{item.longitude}}" markers="{{item.markers}}" scale="14" showLocation="true"></map>
+</view>
+<view class="markdown-hr" :elif="{{item.tag==='hr'}}"></view>
+</template>
+<template name="template2">
+<view class="{{item.style?'markdown-'+item.style:''}}" :if="{{item.tag=='block'}}">
+    <template is="template3" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<block :for="{{item.children}}" :key="index" :elif="{{item.tag=='inline'}}">
+    <template is="markdownImage" data="{{item:item}}" :if="{{item.tag=='image'}}"></template>
+    <view class="markdown-break" :elif="{{item.tag=='break'}}"></view>
+    <view bindtap="markdownTelTap" class="markdown-text" data-tel="{{item.content}}" :elif="{{item.tag=='tel'}}">
+        <text class="markdown-tel">{{item.content}}</text>
+    </view>
+    <view class="markdown-text" :else>
+        <text class="{{item.tag?'markdown-'+item.tag:''}}">{{item.content}}</text>
+    </view>
+</block>
+<view class="markdown-table" :elif="{{item.tag=='table'}}">
+    <template is="template3" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-tbody" :elif="{{item.tag=='tbody'}}">
+    <template is="template3" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-thead" :elif="{{item.tag=='thead'}}">
+    <template is="template3" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-td" :elif="{{item.tag=='td'}}">
+    <template is="template3" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-tr" :elif="{{item.tag=='tr'}}">
+    <template is="template3" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-th" :elif="{{item.tag=='th'}}">
+    <template is="template3" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-ul" :elif="{{item.tag=='bullet-list'}}">
+    <template is="template3" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-li" :elif="{{item.tag=='list-item'}}">
+    <template is="template3" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-ol" :elif="{{item.tag=='ordered-list'}}">
+    <template is="template3" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-break" :elif="{{item.tag=='break'}}"></view>
+<template is="markdownVideo" data="{{item:item}}" :elif="{{item.tag=='video'}}"></template>
+<template is="markdownImage" data="{{item:item}}" :elif="{{item.tag=='image'}}"></template>
+<template is="markdownAudio" data="{{item:item}}" :elif="{{item.tag=='audio'}}"></template>
+<template is="markdownFile" data="{{item:item}}" :elif="{{item.tag=='file'}}"></template>
+<view class="markdown-map" :if="{{item.longitude&&item.latitude}}" :elif="{{item.tag=='loc'}}">
+    <map bindmarkertap="markdownMapMarkerTap" bindtap="markdownMapTap" class="map" latitude="{{item.latitude}}"
+         longitude="{{item.longitude}}" markers="{{item.markers}}" scale="14" showLocation="true"></map>
+</view>
+<view class="markdown-hr" :elif="{{item.tag==='hr'}}"></view>
+</template>
+<template name="template1">
+<view class="{{item.style?'markdown-'+item.style:''}}" :if="{{item.tag=='block'}}">
+    <template is="template2" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<block :for="{{item.children}}" :key="index" :elif="{{item.tag=='inline'}}">
+    <template is="markdownImage" data="{{item:item}}" :if="{{item.tag=='image'}}"></template>
+    <view class="markdown-break" :elif="{{item.tag=='break'}}"></view>
+    <view bindtap="markdownTelTap" class="markdown-text" data-tel="{{item.content}}" :elif="{{item.tag=='tel'}}">
+        <text class="markdown-tel">{{item.content}}</text>
+    </view>
+    <view class="markdown-text" :else>
+        <text class="{{item.tag?'markdown-'+item.tag:''}}">{{item.content}}</text>
+    </view>
+</block>
+<view class="markdown-table" :elif="{{item.tag=='table'}}">
+    <template is="template2" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-tbody" :elif="{{item.tag=='tbody'}}">
+    <template is="template2" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-thead" :elif="{{item.tag=='thead'}}">
+    <template is="template2" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-td" :elif="{{item.tag=='td'}}">
+    <template is="template2" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-tr" :elif="{{item.tag=='tr'}}">
+    <template is="template2" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-th" :elif="{{item.tag=='th'}}">
+    <template is="template2" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-ul" :elif="{{item.tag=='bullet-list'}}">
+    <template is="template2" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-li" :elif="{{item.tag=='list-item'}}">
+    <template is="template2" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-ol" :elif="{{item.tag=='ordered-list'}}">
+    <template is="template2" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-break" :elif="{{item.tag=='break'}}"></view>
+<template is="markdownVideo" data="{{item:item}}" :elif="{{item.tag=='video'}}"></template>
+<template is="markdownImage" data="{{item:item}}" :elif="{{item.tag=='image'}}"></template>
+<template is="markdownAudio" data="{{item:item}}" :elif="{{item.tag=='audio'}}"></template>
+<template is="markdownFile" data="{{item:item}}" :elif="{{item.tag=='file'}}"></template>
+<view class="markdown-map" :if="{{item.longitude&&item.latitude}}" :elif="{{item.tag=='loc'}}">
+    <map bindmarkertap="markdownMapMarkerTap" bindtap="markdownMapTap" class="map" latitude="{{item.latitude}}"
+         longitude="{{item.longitude}}" markers="{{item.markers}}" scale="14" showLocation="true"></map>
+</view>
+<view class="markdown-hr" :elif="{{item.tag==='hr'}}"></view>
+</template>
+<template name="template0">
+<view class="{{item.style?'markdown-'+item.style:''}}" :if="{{item.tag=='block'}}">
+    <template is="template1" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<block :for="{{item.children}}" :key="index" :elif="{{item.tag=='inline'}}">
+    <template is="markdownImage" data="{{item:item}}" :if="{{item.tag=='image'}}"></template>
+    <view class="markdown-break" :elif="{{item.tag=='break'}}"></view>
+    <view bindtap="markdownTelTap" class="markdown-text" data-tel="{{item.content}}" :elif="{{item.tag=='tel'}}">
+        <text class="markdown-tel">{{item.content}}</text>
+    </view>
+    <view class="markdown-text" :else>
+        <text class="{{item.tag?'markdown-'+item.tag:''}}">{{item.content}}</text>
+    </view>
+</block>
+<view class="markdown-table" :elif="{{item.tag=='table'}}">
+    <template is="template1" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-tbody" :elif="{{item.tag=='tbody'}}">
+    <template is="template1" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-thead" :elif="{{item.tag=='thead'}}">
+    <template is="template1" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-td" :elif="{{item.tag=='td'}}">
+    <template is="template1" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-tr" :elif="{{item.tag=='tr'}}">
+    <template is="template1" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-th" :elif="{{item.tag=='th'}}">
+    <template is="template1" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-ul" :elif="{{item.tag=='bullet-list'}}">
+    <template is="template1" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-li" :elif="{{item.tag=='list-item'}}">
+    <template is="template1" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-ol" :elif="{{item.tag=='ordered-list'}}">
+    <template is="template1" data="{{item:item}}" :for="{{item.children}}" :key="index"></template>
+</view>
+<view class="markdown-break" :elif="{{item.tag=='break'}}"></view>
+<template is="markdownVideo" data="{{item:item}}" :elif="{{item.tag=='video'}}"></template>
+<template is="markdownImage" data="{{item:item}}" :elif="{{item.tag=='image'}}"></template>
+<template is="markdownAudio" data="{{item:item}}" :elif="{{item.tag=='audio'}}"></template>
+<template is="markdownFile" data="{{item:item}}" :elif="{{item.tag=='file'}}"></template>
+<view class="markdown-map" :if="{{item.longitude&&item.latitude}}" :elif="{{item.tag=='loc'}}">
+    <image class="markdown-map-loc" src="../../images/map-icon.png"></image>
+    <text bindtap="markdownMapTap">{{item.address}}</text>
+    <image class="markdown-map-arrow" src="../../images/map-right-arrow.png"></image>
+</view>
+<view class="markdown-hr" :elif="{{item.tag==='hr'}}"></view>
+</template>
+<template name="markdown">
+<view bindlongtap="markdownWrapLongTap" class="markdown-wrapper">
+    <template is="template0" data="{{item:item}}" :for="{{markdownData}}" :key="index"></template>
+</view>
+</template>
+<template name="markdownImage">
+<view class="markdown-image">
+    <image bindload="markdownImageLoad" bindtap="markdownImageTap" data-imageId="{{item.imageId}}"
+           data-src="{{item.src}}" mode="widthFix" src="{{item.src}}"></image>
+</view>
+</template>
+<template name="markdownFile">
+<view class="markdown-file">
+    <view catchlongtap="markdownFileLongTap" catchtap="markdownFileTap" class="markdown-file-default"
+          data-src="{{item.src}}">
+        <view class="markdown-file-left"></view>
+        <view class="markdown-file-right">
+            <view class="markdown-file-info">
+                <view class="markdown-file-name">
+                    {{item.name?item.name:'这是一个文件'}}
+                </view>
+                <view class="markdown-file-desc">
+                    点击查看文件详情
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+</template>
+<template name="markdownAudio">
+<view class="markdown-audio" data-src="{{item.src}}">
+    <audio controls author="{{'点击右侧播放按钮进行收听'}}" name="{{item.name?item.name:'这是一段声音'}}" src="{{item.src}}"></audio>
+</view>
+</template>
+<template name="markdownVideo">
+<view catchlongtap="markdownVideoLongTap" class="markdown-video" data-src="{{item.src}}">
+    <video controls src="{{item.src}}"></video>
+</view>
+</template>

@@ -1,0 +1,192 @@
+<import src="../../.././../widget/markdown/markdown.wxml"></import>
+<view class="container {{deleted?'deleted-overflow-hidden':''}}" style="{{type=='act'&&!joind&&!enough&&!showHint?'padding-bottom: 99rpx;':'padding-bottom: 1rpx;'}}" wx:if="{{hasAuthorized}}">
+    <view bindtap="reRequest" class="network-error-view" wx:if="{{isNetworkError}}">
+        <image src="../../images/reload.png"></image>
+        <text>网络出错</text>
+        <text>轻触屏幕重新加载</text>
+    </view>
+    <block wx:else>
+        <view class="{{share_wrap}}">
+            <view class="{{mask_cls}}">
+                <view class="group-share__circle-wrap">
+                    <view class="group-share__circle group-share__circle_1"></view>
+                    <view class="group-share__circle group-share__circle_2"></view>
+                    <view class="group-share__circle group-share__circle_3"></view>
+                </view>
+            </view>
+        </view>
+        <view class="egg-view" wx:if="{{eggEnable&&!showHint}}">
+            <view animation="{{eggAnime.index}}" class="egg-element" style="left: {{40*index}}rpx;" wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]}}">
+                <image src="{{eggImg}}" wx:if="{{eggImg}}"></image>
+                <text wx:else>{{eggChar}}</text>
+            </view>
+        </view>
+        <view class="full-view" wx:if="{{max_num&&max_num===members}}">
+            <image src="../../images/full.png"></image>
+        </view>
+        <view wx:if="{{!deleted}}">
+            <image class="header-title-image-214 {{deleted?'deleted-img':''}}" mode="aspectFill" src="http://ntc-qn.jianjian.tv/214.png" wx:if="{{templateID==214}}"></image>
+            <block wx:if="{{templateID==219}}">
+                <image class="header-title-image-219 {{deleted?'deleted-img':''}} {{max_num&&max_num===members?'deleted-img':''}}" mode="aspectFill" src="../../images/219.png"></image>
+                <view class="toyou-219-view">
+                    <text class="toyou-219-view-title" wx:if="{{redStatus=='unopen'}}">{{desName}}收</text>
+                    <text bindtap="bindRedDetailTap" class="toyou-219-view-title" wx:else>查看详情</text>
+                    <image bindtap="openMyRed" class="toyou-219-view-open" src="../../images/redenvelope-open.png" wx:if="{{redStatus=='unopen'}}"></image>
+                    <text class="toyou-219-view-sender" style="{{redStatus=='unopen'?'':'margin-top: 134rpx;'}}">{{userName}}送给{{desName}}的红包</text>
+                    <view class="toyou-219-view-money">{{fundsStr}}
+            <text class="toyou-219-view-yuan">元</text>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view class="{{templateID==204||templateID==205?'top':'content_view'}}">
+            <view wx:if="{{!deleted}}">
+                <view class="{{templateID==204||templateID==205?'top':''}}">
+                    <view class="header" style="{{templateID==204||templateID==205?'margin:40rpx 0 0 0;':''}}">
+                        <image class="header-title-image-204 {{deleted?'deleted-img':''}} {{max_num&&max_num===members?'deleted-img':''}}" mode="aspectFill" src="http://ntc-qn.jianjian.tv/father_day.png" wx:if="{{templateID==204}}"></image>
+                        <image class="header-title-image-204 {{deleted?'deleted-img':''}} {{max_num&&max_num===members?'deleted-img':''}}" mode="aspectFill" src="http://ntc-qn.jianjian.tv/award.png" wx:elif="{{templateID==205}}"></image>
+                        <image class="header-title-image {{deleted?'deleted-img':''}} {{max_num&&max_num===members?'deleted-img':''}}" mode="aspectFill" src="{{topPic}}" wx:elif="{{templateID==206}}"></image>
+                        <image class="header-title-image {{deleted?'deleted-img':''}} {{max_num&&max_num===members?'deleted-img':''}}" mode="aspectFill" src="http://ntc-qn.jianjian.tv/{{templateID}}.png" wx:elif="{{templateID==203||templateID==210||templateID==211||templateID==213||templateID==221}}"></image>
+                        <image class="header-title-image-220 {{deleted?'deleted-img':''}} {{max_num&&max_num===members?'deleted-img':''}}" mode="aspectFill" src="http://ntc-qn.jianjian.tv/{{templateID}}.png" wx:elif="{{templateID==220||templateID==222||templateID==223||templateID==224||templateID==225||templateID==226||templateID==227||templateID==228}}"></image>
+                        <image class="header-title-image-220 {{deleted?'deleted-img':''}} {{max_num&&max_num===members?'deleted-img':''}}" mode="aspectFill" src="../../images/{{templateID}}.png" wx:elif="{{templateID==229}}"></image>
+                        <image class="header-title-image {{deleted?'deleted-img':''}} {{max_num&&max_num===members?'deleted-img':''}}" mode="aspectFill" src="../../images/{{templateID}}.png" wx:elif="{{templateID!=214&&templateID!=219}}"></image>
+                        <view class="header-hint {{deleted?'deleted-text':''}} {{max_num&&max_num===members?'deleted-text':''}}" wx:if="{{templateID==1||templateID==2||templateID==201||templateID==202||templateID==203||templateID==208||templateID==209||templateID==210||templateID==211||templateID==212||templateID==213||templateID==215||templateID==216||templateID==217||templateID==218||templateID==221}}">
+                            <text class="document_num">本群发 〔{{time_year}}〕 {{time_id}} 号</text>
+                        </view>
+                    </view>
+                </view>
+                <block wx:if="{{templateID==204||templateID==205}}">
+                    <text class="father-name">{{title}}</text>
+                    <text class="auther-name">{{userName}}</text>
+                    <text class="father-title">{{content}}</text>
+                    <text class="auther-time" wx:if="{{templateID==205}}">{{time}}</text>
+                </block>
+                <view class="content {{deleted?'deleted-text deleted-grayscale':''}}" style="{{templateID==219?'margin-top: 21rpx;':''}}" wx:if="{{templateID!=204&&templateID!=205}}">
+                    <view class="content-title-view">
+                        <view class="content-title">{{title}}</view>
+                    </view>
+                    <template is="markdown" data="{{markdownData:markdown}}"></template>
+                    <view class="content-sign">{{userName}}</view>
+                    <view class="content-date">{{time}}</view>
+                </view>
+                <view class="keyWord-view" wx:if="{{type=='ntc'||type=='red'||type=='act'}}">
+                    <text class="keyWord-text">{{kwords}}</text>
+                </view>
+                <view class="redenvelope" wx:if="{{type=='red'&&redReady&&!designated}}">
+                    <image class="redenvelope-bg" src="../../images/redenvelope-bg.png"></image>
+                    <block wx:if="{{!deleted}}">
+                        <block wx:if="{{redStatus=='unopen'&&redCountdown>0}}">
+                            <image class="redenvelope-countdown-bg" src="../../images/redenvelope-open-bg.png"></image>
+                            <text class="redenvelope-countdown">{{redCountdown}}</text>
+                        </block>
+                        <form bindsubmit="bindRedOpenTap" reportSubmit="true">
+                            <button class="redenvelope-unopen-btn" formType="{{redCountdown==0?'submit':''}}">
+                                <image class="redenvelope-unopen {{redAnimation?'redenvelop-animation':''}}" src="{{redAnimation?'../../images/redenvelope-coin.png':'../../images/redenvelope-open.png'}}" wx:if="{{redStatus=='unopen'}}"></image>
+                            </button>
+                        </form>
+                        <text class="redenvelope-empty" wx:if="{{redStatus=='empty'}}">手慢了，红包派完了</text>
+                        <text class="redenvelope-expired" wx:if="{{redStatus=='expired'}}">该红包已超过24小时</text>
+                        <text class="redenvelope-opened" wx:if="{{redStatus=='opened'}}">{{redMyAmountStr}}元</text>
+                        <view bindtap="bindRedDetailTap" class="redenvelope-bottom" wx:if="{{redStatus!='unopen'||isAuthor}}">
+                            <text>查看领取详情</text>
+                            <image src="../../images/redenvelope-arrow.png"></image>
+                        </view>
+                    </block>
+                    <view bindtap="bindWithdrawTap" class="redenvelope-bottom" wx:else>
+                        <text>提现</text>
+                        <image src="../../images/redenvelope-arrow.png"></image>
+                    </view>
+                </view>
+                <view class="line {{templateID==203?'green':templateID==201||templateID==214?'blue':''}}"></view>
+                <view class="line2 {{templateID==203?'green':templateID==201||templateID==214?'blue':''}}"></view>
+            </view>
+            <view class="delete-bg" wx:else>
+                <image class="delete-ntc" src="../../images/delete-act.png" wx:if="{{type=='act'}}"></image>
+                <image class="delete-ntc" src="../../images/delete-ntc.png" wx:else></image>
+            </view>
+            <view class="menu" wx:if="{{!showHint}}">
+                <view class="menu-left">
+                    <view class="menu-left-border" hoverClass="default-view-hover">
+                        <button bindtap="bindIntroductionTap" id="menu-about">这是什么</button>
+                    </view>
+                </view>
+                <view>
+                    <view class="menu-left-border {{deleted?'deleted-border':''}}" hoverClass="default-view-hover">
+                        <button bindtap="{{deleted?'':'bindShareTap'}}" class="{{deleted?'deleted-text':''}}" id="menu-share" openType="{{deleted?'':'share'}}">{{shareHint}}</button>
+                    </view>
+                </view>
+                <view class="menu-right">
+                    <view class="menu-right-border" hoverClass="default-view-hover">
+                        <view bindtap="bindUpdateTap" id="menu-create" wx:if="{{!iseditNtc}}">{{type=='red'?'我也要发红包通知':type=='act'?'我也要发群活动':'我也要发群通知'}}</view>
+                        <view bindtap="bindIditNtc" id="menu-create" wx:else>{{type=='red'?'我也要发红包通知':type=='act'?'我也要发群活动':'编辑通知'}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="bottom" wx:if="{{!showHint}}">
+                <view class="joind-view">
+                    <view class="bottom-title {{deleted?'deleted-text':''}}">{{(type=='act'?'已报名':'已查看')+members+(max_num?'/'+max_num:'')+'人'}}</view>
+                    <view bindtap="joinCancel" class="join-cancel {{deleted?'deleted-text':''}}" wx:if="{{joind&&!isAuthor&&type=='act'}}">取消报名</view>
+                    <view bindtap="getMail" class="get-mail {{deleted?'deleted-text':''}}" wx:if="{{isAuthor&&type=='act'&&memberList.length>0&&(cell_req||name_req)}}">导出列表</view>
+                </view>
+                <view bindtap="{{deleted?'':'bindMemberTap'}}" class="bottom-cell" data-member="{{each}}" wx:for="{{memberList}}" wx:for-item="each" wx:key="id">
+                    <view class="bottom-cell-name-view">
+                        <image class="bottom-cell-avatar {{deleted?'deleted-avatar':''}}" src="{{each.user.avatar}}"></image>
+                        <text class="bottom-cell-name {{deleted?'deleted-text':''}}">{{each.name?each.name:each.user.nickname}}</text>
+                        <image catchtap="bindNicknameTap" class="bottom-cell-change {{deleted?'deleted-avatar':''}}" src="../../images/g-nickname.png" wx:if="{{hasGid&&each.isme}}"></image>
+                        <text class="bottom-cell-date {{deleted?'deleted-text':''}}">{{each.time}}</text>
+                    </view>
+                    <view class="bottom-cell-view">
+                        <text class="bottom-cell-phone {{deleted?'deleted-text':''}}" wx:if="{{each.cell}}">{{each.cell}}</text>
+                        <text catchtap="{{each.msg==null?deleted?'':'bindNoteTap':''}}" class="{{each.msg==null?'bottom-cell-note-btn'+(deleted?'-deleted':''):'bottom-cell-note'}}" data-id="{{each.id}}" wx:if="{{each.showNote}}">{{each.msg==null?'留言':each.msg}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="jianjian-msg">
+            <text>群里有事是一款用于发布群通知、群活动、群投票的小程序。
+
+鉴鉴科技版权所有
+©2017 Jianjian Inc. All Rights Reserved</text>
+        </view>
+        <view style="height:60px;width:100%" wx:if="{{showHint}}"></view>
+        <button bindtap="{{deleted?'':'bindShareTap'}}" class="share-bottom" hoverClass="{{type=='red'?'default-btn-red-hover':'default-btn-hover'}}" openType="{{deleted?'':'share'}}" style="{{type=='red'?'background-color: #F85A4D !important;':templateID==222||templateID==223?'background-color: #ce2323 !important;':''}}" wx:if="{{showHint}}">{{postHint}}</button>
+        <button bindtap="{{deleted?'':'joinActivity'}}" class="share-bottom {{deleted?'btn-deleted':''}}" hoverClass="{{deleted?'':'default-btn-hover'}}" size="default" wx:if="{{type=='act'&&!joind&&!enough&&!showHint}}">报名</button>
+        <view class="toyou-view" wx:if="{{showRead}}">
+            <form bindsubmit="formSubmitMyRedCard" reportSubmit="true">
+                <view class="toyou-white-view">
+                    <text class="toyou-white-title">输入手机号接收验证码</text>
+                    <input bindinput="bindRedCellInput" class="toyou-cell-input" disabled="{{vcodeStatus>0}}" maxlength="11" name="cell" placeholder="请输入11位手机号" value="{{red_cell}}"></input>
+                    <view class="toyou-code-view">
+                        <input bindinput="bindRedCodeInput" class="toyou-code-input" disabled="{{vcodeStatus>2}}" maxlength="6" name="vcode" placeholder="验证码" value="{{red_code}}"></input>
+                        <view bindtap="bindRedSendCode" class="toyou-code-button">{{timeStr}}</view>
+                    </view>
+                    <hr class="toyou-hr"></hr>
+                    <view class="toyou-edit">
+                        <text bindtap="closeMyRed">取消</text>
+                        <hr></hr>
+                        <button formType="submit" style="color:#02BB00;background-color: white">确定</button>
+                    </view>
+                </view>
+            </form>
+        </view>
+        <view class="toyou-view" wx:if="{{showMail}}">
+            <form bindsubmit="formSubmitMail" reportSubmit="true">
+                <view class="toyou-white-view" style="height:392rpx">
+                    <text class="toyou-white-title">请输入接受邮箱</text>
+                    <input bindinput="bindRedCellInput" class="toyou-cell-input" maxlength="100" name="mail" placeholder="填写正确邮箱地址"></input>
+                    <hr class="toyou-hr"></hr>
+                    <view class="toyou-edit">
+                        <text bindtap="hideMail">取消</text>
+                        <hr></hr>
+                        <button formType="submit" style="color:#02BB00;background-color: white">确定</button>
+                    </view>
+                </view>
+            </form>
+        </view>
+    </block>
+</view>
+<view class="authorization-view" wx:else>
+    <image src="../../images/logo.png"></image>
+    <text>小程序需要您的微信授权才能使用哦~</text>
+    <button bindgetuserinfo="requestGetUserInfo" bindtap="requestAuthorization" openType="getUserInfo">请授权</button>
+</view>

@@ -1,0 +1,6 @@
+<form bindsubmit="formSubmit">
+    <view class="sign-view">
+        <textarea autoHeight bindinput="bindPhoneInput" focus="{{autofocus}}" maxlength="140" name="note" placeholder="{{ty=='gNickname'?'输入本群昵称':'输入留言'}}"></textarea>
+    </view>
+    <button class="default-btn {{enable?'':'btn-disable'}}" formType="submit" size="default">确定</button>
+</form>

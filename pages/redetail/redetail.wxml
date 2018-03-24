@@ -1,0 +1,37 @@
+<view class="container" wx:if="{{hasAuthorized}}">
+    <view bindtap="reRequest" class="network-error-view" wx:if="{{isNetworkError}}">
+        <image src="../../images/reload.png"></image>
+        <text>网络出错</text>
+        <text>轻触屏幕重新加载</text>
+    </view>
+    <block wx:else>
+        <view class="red_top_view">
+            <image class="red_top" src="../../images/redenvelop-header.png"></image>
+            <image class="red_avatar" src="{{avatar}}"></image>
+            <text class="red_name">{{inscribe}}的红包</text>
+            <view class="red_money_view" wx:if="{{amount!=0}}">
+                <text class="red_money">{{amount}}</text>
+                <text class="red_money_unit">元</text>
+            </view>
+            <text class="red_over_money" wx:if="{{amount!=0}}"> 已存入余额，可直接提现</text>
+            <text bindtap="withdraw" class="red_withdraw">提现</text>
+        </view>
+        <text class="red_get_num" wx:if="{{showMoney}}">已领取{{openers}}/{{eNum}}个，共{{balance}}/{{funds}}元</text>
+        <text class="red_get_num" wx:else>已领取{{openers}}/{{eNum}}个</text>
+        <view class="bottom" wx:if="{{redList.length!=0}}">
+            <view class="bottom-cell" wx:for="{{redList}}" wx:for-item="each" wx:key="id">
+                <view class="bottom-cell-view">
+                    <image class="bottom-cell-avatar" src="{{each.user.avatar}}"></image>
+                    <text class="bottom-cell-name">{{each.user.nickname}}</text>
+                    <text class="bottom-money">{{each.amount}}元</text>
+                </view>
+                <text class="bottom-cell-date">{{each.time}}</text>
+            </view>
+        </view>
+    </block>
+</view>
+<view class="authorization-view" wx:else>
+    <image src="../../images/logo.png"></image>
+    <text>小程序需要您的微信授权才能使用哦~</text>
+    <button bindgetuserinfo="requestGetUserInfo" bindtap="requestAuthorization" openType="getUserInfo">请授权</button>
+</view>

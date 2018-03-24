@@ -1,0 +1,35 @@
+{
+    "pages": [
+        "pages/loading/loading",
+        "pages/index/index",
+        "pages/detail/detail",
+        "pages/update/update",
+        "pages/template/template",
+        "pages/signup/signup",
+        "pages/note/note",
+        "pages/votedetail/votedetail",
+        "pages/vote/vote",
+        "pages/introduction/introduction",
+        "pages/publish/publish",
+        "pages/withdraw/withdraw",
+        "pages/redetail/redetail",
+        "pages/redhistory/redhistory",
+        "pages/redDescription/redDescription",
+        "pages/faq/faq",
+        "pages/keywords/keywords"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "backgroundColor": "#F7F7FA",
+        "navigationBarBackgroundColor": "#03a9f4",
+        "navigationBarTitleText": "群里有事",
+        "navigationBarTextStyle": "white"
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    },
+    "debug": true
+}

@@ -1,0 +1,125 @@
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.no-view {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-right: 40rpx;
+    margin-left: 40rpx;
+}
+
+.no-view image {
+    width: 681rpx;
+    height: 868rpx;
+}
+
+.no-view text {
+    font-size: 36rpx;
+    color: rgba(0,0,0,0.24);
+    text-align: center;
+}
+
+.switch {
+    z-index: 100;
+    background-color: #03a9f4;
+    height: 94rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+}
+
+.switch-tab {
+    flex: 1;
+}
+
+.switch-text {
+    font-size: 36rpx;
+    text-align: center;
+    height: 88rpx;
+    line-height: 88rpx;
+    width: 200rpx;
+    margin: 0 auto;
+    color: white;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.text-unselected {
+    opacity: 0.5;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.switch-underline {
+    height: 6rpx;
+    width: 80rpx;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.container {
+    margin-top: 110rpx;
+}
+
+.add-button {
+    background: #03a9f4;
+    height: 99rpx;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 6;
+    color: white;
+    font-size: 36rpx;
+    letter-spacing: 1rpx;
+    line-height: 50rpx;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-button text {
+    margin-left: 20rpx;
+    margin-top: 2rpx;
+}
+
+.add-button image {
+    height: 40rpx;
+    width: 40rpx;
+}
+
+.index-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.index-bottom-sep {
+    width: 2rpx;
+    height: 35rpx;
+    background: black;
+    margin: 0 10rpx;
+}
+
+.contact-button {
+    border: 0px!important;
+    background-color: transparent;
+    outline: none;
+    text-decoration: underline;
+    font-size: 14px;
+    margin: 0;
+    line-height: 70rpx;
+    padding: 0 14px;
+}
+
+.content {
+    padding-bottom: 99rpx;
+}

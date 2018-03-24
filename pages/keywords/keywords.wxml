@@ -1,0 +1,29 @@
+<view class="container" wx:if="{{hasAuthorized}}">
+    <view bindtap="reRequest" class="network-error-view" wx:if="{{isNetworkError}}">
+        <image src="../../images/reload.png"></image>
+        <text>网络出错</text>
+        <text>轻触屏幕重新加载</text>
+    </view>
+    <block wx:else>
+        <text class="key-title">添加关键词后能够通过关键词来查找通知</text>
+        <form bindsubmit="formSubmit" reportSubmit="true">
+            <view class="key-input-view">
+                <input bindconfirm="addKey" bindinput="bindKeyInput" class="title-input" cursorSpacing="60" focus="{{focus}}" name="keyword" placeholder="输入关键字" placeholderClass="placeholder-class" value="{{keyword}}"></input>
+                <view bindtap="addKey" class="btn-add" style="{{keywordValid?'background-color: #03A9F4;':'background-color: #B0BAC5;'}}">
+                    <text>添加</text>
+                </view>
+            </view>
+        </form>
+        <view class="show-key">
+            <view class="each-key" wx:for="{{keyList}}" wx:for-index="indexicon" wx:for-item="each">
+                <text>{{each}}</text>
+                <image bindtap="bindCloseTap" data-indexicon="{{indexicon}}" src="../../images/close.png"></image>
+            </view>
+        </view>
+    </block>
+</view>
+<view class="authorization-view" wx:else>
+    <image src="../../images/logo.png"></image>
+    <text>小程序需要您的微信授权才能使用哦~</text>
+    <button bindgetuserinfo="requestGetUserInfo" bindtap="requestAuthorization" openType="getUserInfo">请授权</button>
+</view>

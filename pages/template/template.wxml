@@ -1,0 +1,14 @@
+<view class="container">
+    <view class="grad">
+        <view bindtap="bindTemplateTap" class="defalut-template" data-id="{{item}}" wx:for="{{templateList}}">
+            <view class="preview-view">
+                <image mode="aspectFit" src="{{filePath}}" style="width:280rpx;" wx:if="{{filePath&&item==206}}"></image>
+                <image mode="aspectFit" src="{{myOldPath}}" style="width:280rpx;" wx:elif="{{myOldPath&&item==207}}"></image>
+                <image mode="aspectFit" src="http://ntc-qn.jianjian.tv/award.png" style="width:280rpx;height: 150rpx;" wx:elif="{{item==205}}"></image>
+                <image mode="aspectFit" src="../../images/{{item}}.png" style="width:280rpx;height: 150rpx;" wx:else></image>
+            </view>
+            <image src="../../images/radio-{{template==item?'on':'off'}}.png" style="height:40rpx; width:40rpx;"></image>
+        </view>
+    </view>
+    <button bindtap="bindSubmitTap" class="default-btn" hoverClass="default-btn-hover" size="default">确定</button>
+</view>

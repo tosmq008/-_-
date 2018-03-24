@@ -1,0 +1,62 @@
+.uploader-cell {
+    margin: 20rpx 0 0 32rpx;
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.uploader-cell:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2rpx;
+    color: #D9D9D9;
+    left: 32rpx;
+}
+
+.uploader-cell-body {
+    -webkit-box-flex: 1;
+    flex: 1;
+}
+
+.uploader-inputbox {
+    float: left;
+    position: relative;
+    width: 148rpx;
+    height: 148rpx;
+    border: 1px solid #D9D9D9;
+    background-color: white;
+    margin-bottom: 20rpx;
+    display: flex;
+    text-align: center;
+}
+
+.uploader-input {
+    width: 92rpx;
+    height: 77rpx;
+    margin: auto auto;
+}
+
+.uploader-file {
+    position: relative;
+    float: left;
+    margin-right: 25rpx;
+    margin-bottom: 20rpx;
+}
+
+.uploader-img {
+    display: block;
+    width: 148rpx;
+    height: 148rpx;
+}
+
+.uploader-img-del {
+    width: 30rpx;
+    height: 30rpx;
+    position: absolute;
+    top: -10rpx;
+    right: -10rpx;
+}

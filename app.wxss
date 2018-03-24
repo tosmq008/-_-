@@ -1,0 +1,396 @@
+page {
+    background-color: #F7F7FA;
+    min-height: 100%;
+    flex: 1;
+}
+
+.deleted-overflow-hidden {
+    overflow: hidden;
+}
+
+.deleted-border {
+    border-color: #d9d9d9!important;
+}
+
+.deleted-text {
+    color: #d9d9d9!important;
+}
+
+.deleted-grayscale {
+    filter: grayscale(100%);
+}
+
+.deleted-bg {
+    background-color: #d9d9d9!important;
+}
+
+.deleted-avatar {
+    opacity: 0.3;
+}
+
+.deleted-img {
+    filter: grayscale(100%);
+    opacity: 0.5;
+}
+
+.placeholder-class {
+    color: #B0BAC5;
+}
+
+.flex-padding {
+    flex: 1;
+}
+
+.hr {
+    height: 1rpx;
+    margin: 0 32rpx;
+    background-color: rgba(0,0,0,0.12);
+}
+
+.ra {
+    text-align: right;
+}
+
+.default-btn,.default-btn-red {
+    color: white;
+    height: 99rpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    z-index: 10;
+}
+
+.default-btn {
+    background-color: #03a9f4;
+}
+
+.default-btn-red {
+    background-color: #F85A4D;
+}
+
+.default-btn-hover {
+    background-color: #0277BD!important;
+}
+
+.default-view-hover {
+    background-color: #E5E5E5!important;
+}
+
+.default-btn-red-hover {
+    background-color: #C6483D!important;
+}
+
+.btn-disable {
+    background-color: #B0BAC5;
+}
+
+.btn-red-disable {
+    background-color: #FBACA6!important;
+}
+
+.btn-deleted {
+    background-color: #d9d9d9!important;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.template_all_view {
+    margin: 0 24rpx 16rpx 24rpx;
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+}
+
+.template_view {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 5;
+    transition: left 0.2s ease-in-out;
+    background-color: white;
+    width: 100%;
+}
+
+.cell-del {
+    width: 200rpx;
+    background-color: #f44336;
+    position: absolute;
+    right: 0;
+    z-index: 4;
+    top: 0;
+    bottom: 0;
+    display: flex;
+}
+
+.cell-del text {
+    margin: auto auto;
+    font-size: 48rpx;
+    color: #fff;
+}
+
+.template_type_n,.template_type_e {
+    font-size: 36rpx;
+    color: #F44336;
+}
+
+.template_type_a {
+    font-size: 36rpx;
+    color: #03A9F4;
+}
+
+.template_type_t {
+    font-size: 36rpx;
+    color: #FFC107;
+}
+
+.template_type_d {
+    font-size: 36rpx;
+    color: #FF5722;
+}
+
+.template_type_gray {
+    font-size: 36rpx;
+    color: rgb(158,158,158);
+}
+
+.template_name {
+    margin: 32rpx 32rpx 0 32rpx;
+    font-size: 36rpx;
+    color: #313541;
+    font-weight: bold;
+    max-height: 100rpx;
+    line-height: 50rpx;
+    overflow: hidden;
+}
+
+.template_keywords {
+    margin: 40rpx 32rpx 0 32rpx;
+    font-size: 28rpx;
+    color: #8091a5;
+    display: block;
+    max-height: 40rpx;
+    line-height: 40rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.template_descrption {
+    margin: 16rpx 32rpx 0 32rpx;
+    font-size: 28rpx;
+    color: #8091a5;
+    display: block;
+    max-height: 80rpx;
+    line-height: 40rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.template_bottom {
+    height: 36rpx;
+    margin: 48rpx 32rpx 32rpx 32rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.template_time,.template_user {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.template_time image,.template_user image {
+    width: 22rpx;
+    height: 22rpx;
+    margin-bottom: 2rpx;
+}
+
+.template_time text,.template_user text {
+    margin-left: 7rpx;
+    font-size: 24rpx;
+    line-height: 36rpx;
+    color: #B0BAC5;
+}
+
+.authorization-view {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 200rpx 0;
+    box-sizing: border-box;
+    margin-right: 40rpx;
+    margin-left: 40rpx;
+}
+
+.authorization-view image {
+    width: 256rpx;
+    height: 256rpx;
+    margin-bottom: 40rpx;
+}
+
+.authorization-view text {
+    font-size: 58rpx;
+    color: rgba(0,0,0,0.38);
+    text-align: center;
+    line-height: 80rpx;
+}
+
+.authorization-view button {
+    margin-top: 64rpx;
+    display: block;
+    max-width: 670rpx;
+    width: 100%;
+    margin: 50rpx 50rpx;
+    color: white;
+    font-size: 48rpx;
+    background-color: #2196f3;
+    box-shadow: 0rpx 3rpx 5rpx rgba(0,0,0,0.24);
+}
+
+.network-error-view {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 200rpx 0;
+    box-sizing: border-box;
+}
+
+.network-error-view image {
+    width: 128rpx;
+    height: 176rpx;
+    margin-bottom: 55rpx;
+}
+
+.network-error-view text {
+    color: rgba(0,0,0,0.38);
+    font-size: 56rpx;
+    text-align: center;
+}
+
+.share_wrap {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.group-share {
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translate(99px,-127px);
+    opacity: 1;
+}
+
+.group-share_active .group-share__circle {
+    animation-name: circleRun;
+}
+
+.group-share_hide {
+    animation: circleHide 1s linear both;
+}
+
+.group-share__circle {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 250px;
+    height: 250px;
+    border-radius: 200px;
+    background-color: rgba(255,200,142,.3);
+    transform: scale(0);
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+
+.group-share__circle_1 {
+    animation-delay: 0s;
+}
+
+.group-share__circle_2 {
+    animation-delay: .5s;
+}
+
+.group-share__circle_1 {
+    animation-delay: 1s;
+}
+
+@-webkit-keyframes circleRun {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+@keyframes circleRun {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes circleHide {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes circleHide {
+    to {
+        opacity: 0;
+    }
+}
+
+.ui-d-n {
+    display: none;
+}
+
+.jianjian-msg {
+    font-size: 20rpx;
+    color: #B0BAC5;
+    margin: 96rpx 59rpx 48rpx 59rpx;
+    text-align: center;
+    display: flex;
+}
+
+.jianjian-msg text {
+    margin: 0 auto;
+}
+
+.res-sign {
+    width: 33rpx;
+    height: 38rpx;
+    position: absolute;
+    top: 2rpx;
+    right: 32rpx;
+}

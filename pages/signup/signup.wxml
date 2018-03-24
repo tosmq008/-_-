@@ -1,0 +1,10 @@
+<form bindsubmit="formSubmit">
+    <view class="sign-view" wx:if="{{name==='true'}}">
+        <input bindinput="bindNameInput" focus="{{namefocus}}" maxlength="11" name="namenumber" placeholder="姓名："></input>
+    </view>
+    <view class="sign-view" wx:if="{{cell==='true'}}">
+        <input bindconfirm="bindPhoneConfirm" bindinput="bindPhoneInput" focus="{{autofocus}}" maxlength="11" name="phonenumber" placeholder="手机号：" type="number"></input>
+    </view>
+    <text class="sign-text" wx:if="{{cell==='true'}}">手机号仅发布人可见</text>
+    <button class="default-btn {{enableCell&&enableName?'':'btn-disable'}}" formType="submit" size="default">确定</button>
+</form>

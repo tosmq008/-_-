@@ -1,0 +1,145 @@
+.bg {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.money-view {
+    height: 112rpx;
+    width: 686rpx;
+    background-color: #fff;
+    margin: 75rpx 32rpx 0rpx 32rpx;
+    align-items: center;
+    display: flex;
+}
+
+.money-hint {
+    margin: 35rpx 0 35rpx 32rpx;
+    min-width: 140rpx;
+    height: 42rpx;
+    color: #313541;
+    font-family: "PingFang SC";
+    font-size: 30rpx;
+    line-height: 42rpx;
+}
+
+.money-num {
+    margin: 35rpx 24rpx 35rpx auto;
+    height: 42rpx;
+    color: #313541;
+    font-family: "PingFang SC";
+    font-size: 30rpx;
+    line-height: 42rpx;
+    text-align: right;
+    overflow: hidden;
+}
+
+.money-unit {
+    margin: 35rpx 32rpx 35rpx 0rpx;
+    height: 42rpx;
+    width: 30rpx;
+    color: #313541;
+    font-family: "PingFang SC";
+    font-size: 30rpx;
+    font-weight: bold;
+    line-height: 42rpx;
+    text-align: right;
+}
+
+.number-hint {
+    height: 33rpx;
+    color: #b0bac5;
+    font-family: "PingFang SC";
+    font-size: 24rpx;
+    line-height: 33rpx;
+    margin: 16rpx auto 0rpx 64rpx;
+}
+
+.all-pay {
+    height: 42rpx;
+    width: 120rpx;
+    color: #5171B0;
+    font-family: "PingFang SC";
+    font-size: 30rpx;
+    line-height: 42rpx;
+    text-align: center;
+    float: right;
+    margin: 16rpx 32rpx 0rpx 0rpx;
+}
+
+.money-num-view {
+    height: 112rpx;
+    width: 686rpx;
+    background-color: #fff;
+    margin: 32rpx 32rpx 0rpx 32rpx;
+    align-items: center;
+    display: flex;
+}
+
+.all-money {
+    height: 135rpx;
+    color: #313541;
+    font-family: "PingFang SC";
+    font-size: 96rpx;
+    font-weight: bold;
+    line-height: 135rpx;
+    margin-top: 70rpx;
+}
+
+.hint-view {
+    width: 100%;
+}
+
+.all-money-hint {
+    height: 42rpx;
+    width: 120rpx;
+    color: #b0bac5;
+    font-family: "PingFang SC";
+    font-size: 30rpx;
+    line-height: 42rpx;
+}
+
+.issue {
+    height: 42rpx;
+    width: 120rpx;
+    color: #5171b0;
+    font-family: "PingFang SC";
+    font-size: 30rpx;
+    line-height: 42rpx;
+    text-align: left;
+    margin-right: auto;
+    margin-left: 30rpx;
+}
+
+.withdraw {
+    height: 94rpx;
+    width: 670rpx;
+    border: 2rpx solid rgba(5,5,5,0.08);
+    border-radius: 10rpx;
+    background-color: #1aad19;
+    margin-top: 168rpx;
+}
+
+.bottom {
+    position: fixed;
+    bottom: 40rpx;
+    width: 100%;
+    display: flex;
+}
+
+.history {
+    height: 42rpx;
+    width: 120rpx;
+    color: #5171b0;
+    font-family: "PingFang SC";
+    font-size: 30rpx;
+    line-height: 42rpx;
+    text-align: right;
+    margin-right: 30rpx;
+    margin-left: auto;
+}
+
+.placeholder-class {
+    height: 42rpx;
+    color: #b0bac5;
+}

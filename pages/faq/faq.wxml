@@ -1,0 +1,47 @@
+<view class="bg">
+    <view class="issue-view">
+        <view bindtap="issue1Tap" class="issue">
+            <text class="issue-detail">发红包通知收取手续费吗？</text>
+            <image animation="{{arrowAnime1}}" class="img" mode="widthFix" src="../../images/arrow-up.png" style="width:20rpx; transform: rotate(180deg);"></image>
+        </view>
+        <view class="answer-view" wx:if="{{issue1}}">
+            <text class="answer">发红包通知金额在10元以下（不包括10元）会收取10%的服务费，10元以上（包括10元）会收取3%的服务费</text>
+        </view>
+    </view>
+    <view class="issue-view">
+        <view bindtap="issue2Tap" class="issue">
+            <text class="issue-detail">未领取的金额会怎么处理？</text>
+            <image animation="{{arrowAnime2}}" class="img" mode="widthFix" src="../../images/arrow-up.png" style="width:20rpx; transform: rotate(180deg);"></image>
+        </view>
+        <view class="answer-view" wx:if="{{issue2}}">
+            <text class="answer">未领取的金额会在24小时后退至群里有事钱包</text>
+        </view>
+    </view>
+    <view class="issue-view">
+        <view bindtap="issue3Tap" class="issue">
+            <text class="issue-detail">如何提现到微信钱包？</text>
+            <image animation="{{arrowAnime3}}" class="img" mode="widthFix" src="../../images/arrow-up.png" style="width:20rpx; transform: rotate(180deg);"></image>
+        </view>
+        <view class="answer-view" wx:if="{{issue3}}">
+            <text class="answer">在红包详情页面有相关按钮可跳转至余额提现页面进行提现，提现金额每次至少1元</text>
+        </view>
+    </view>
+    <view class="issue-view">
+        <view bindtap="issue4Tap" class="issue">
+            <text class="issue-detail">提现会收取手续费吗？</text>
+            <image animation="{{arrowAnime4}}" class="img" mode="widthFix" src="../../images/arrow-up.png" style="width:20rpx; transform: rotate(180deg);"></image>
+        </view>
+        <view class="answer-view" wx:if="{{issue4}}">
+            <text class="answer">提现不收取服务费</text>
+        </view>
+    </view>
+    <view class="issue-view">
+        <view bindtap="issue5Tap" class="issue">
+            <text class="issue-detail">提现多久到账？</text>
+            <image animation="{{arrowAnime5}}" class="img" mode="widthFix" src="../../images/arrow-up.png" style="width:20rpx; transform: rotate(180deg);"></image>
+        </view>
+        <view class="answer-view" wx:if="{{issue5}}">
+            <text class="answer">申请提现后会在1-3个工作日内转账到您的微信钱包</text>
+        </view>
+    </view>
+</view>

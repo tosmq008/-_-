@@ -1,0 +1,46 @@
+.bg {
+    flex-direction: column;
+}
+
+.issue-view {
+    margin: 32rpx 32rpx 0rpx 32rpx;
+    width: 686rpx;
+    background-color: #FFFFFF;
+}
+
+.issue {
+    align-items: center;
+    height: 88rpx;
+    width: 686rpx;
+    background-color: #FFFFFF;
+    flex-direction: row;
+    display: flex;
+}
+
+.img {
+    width: 20rpx;
+    height: 10rpx;
+    margin-right: 32rpx;
+}
+
+.issue-detail {
+    height: 42rpx;
+    color: #313541;
+    font-family: "PingFang SC";
+    font-size: 30rpx;
+    line-height: 42rpx;
+    margin: 23rpx auto 23rpx 32rpx;
+}
+
+.answer-view {
+    min-height: 88rpx;
+    align-items: center;
+    display: flex;
+}
+
+.answer {
+    color: #313541;
+    font-family: "PingFang SC";
+    font-size: 30rpx;
+    margin: 23rpx 32rpx 23rpx 32rpx;
+}

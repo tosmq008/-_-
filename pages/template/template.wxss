@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+}
+
+.grad {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 32rpx;
+    padding-bottom: 100rpx;
+    padding-top: 51rpx;
+}
+
+.defalut-template {
+    width: 50%;
+    height: 302rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.preview-view {
+    background: white;
+    margin: 0 32rpx 36rpx 32rpx;
+    height: 150rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+}

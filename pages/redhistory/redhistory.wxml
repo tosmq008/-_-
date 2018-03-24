@@ -1,0 +1,25 @@
+<view class="container" wx:if="{{hasAuthorized}}">
+    <view bindtap="reRequest" class="network-error-view" wx:if="{{isNetworkError}}">
+        <image src="../../images/reload.png"></image>
+        <text>网络出错</text>
+        <text>轻触屏幕重新加载</text>
+    </view>
+    <view class="bottom" wx:else>
+        <view class="bottom-cell" wx:for="{{historyList}}" wx:for-item="each" wx:key="idx">
+            <view class="bottom-cell-view">
+                <text class="bottom-cell-title">{{each.name}}</text>
+                <text class="bottom-cell-time">{{each.time}}</text>
+            </view>
+            <view class="bottom-cell-right-view">
+                <text class="bottom-money-{{each.color}}">{{each.amount}}</text>
+                <text class="bottom-back" wx:if="{{each.type=='out'&&each.refunds!=0}}">已退款(￥{{each.refunds}})</text>
+            </view>
+        </view>
+    </view>
+    <text class="no-history" wx:if="{{historyList.length==0}}">现在还没有任何记录</text>
+</view>
+<view class="authorization-view" wx:else>
+    <image src="../../images/logo.png"></image>
+    <text>小程序需要您的微信授权才能使用哦~</text>
+    <button bindgetuserinfo="requestGetUserInfo" bindtap="requestAuthorization" openType="getUserInfo">请授权</button>
+</view>

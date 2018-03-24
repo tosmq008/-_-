@@ -1,0 +1,16 @@
+<view bindtap="reRequest" class="network-error-view" wx:if="{{isNetworkError}}">
+    <image src="../../images/reload.png"></image>
+    <text>网络出错</text>
+    <text>轻触屏幕重新加载</text>
+</view>
+<view class="loading-view" wx:elif="{{hasAuthorized}}">
+    <view class="loader">
+        <image class="loading-img" src="../../images/logo-color.png"></image>
+    </view>
+    <text class="loading-txt">正在加载...</text>
+</view>
+<view class="authorization-view" wx:else>
+    <image src="../../images/logo.png"></image>
+    <text>小程序需要您的微信授权才能使用哦~</text>
+    <button bindgetuserinfo="requestGetUserInfo" bindtap="requestAuthorization" openType="getUserInfo">请授权</button>
+</view>

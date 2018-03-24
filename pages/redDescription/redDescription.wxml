@@ -1,0 +1,10 @@
+<view class="bg">
+    <text class="title">通知</text>
+    <text class="des" decode="true">&nbsp;&nbsp;&nbsp;&nbsp;自2018年2月5日起，由于技术调整，群里有事‘红包通知’功能暂停使用，余额我们将自动退回到您的微信零钱，如有疑问请联系群里有事客服，谢谢大家的支持和使用。
+  </text>
+    <view class="edit_view">
+        <button class="contact-button" openType="contact">联系客服</button>
+        <view style="width:55rpx;"></view>
+        <button bindtap="tapWithdraw" class="contact-button">提现</button>
+    </view>
+</view>

@@ -1,0 +1,114 @@
+.container {
+    padding-bottom: 99rpx;
+}
+
+.title-container {
+    margin: 32rpx 32rpx 0 32rpx;
+    background-color: white;
+}
+
+.title-input {
+    color: #313541;
+    height: 153rpx;
+    margin: 0rpx 24rpx;
+    font-size: 48rpx;
+    font-weight: bold;
+    border-bottom: 1rpx solid #DFE6EE;
+}
+
+.title-description {
+    height: 133rpx;
+    color: #313541;
+    margin: 0rpx 24rpx;
+    font-size: 32rpx;
+    border-bottom: 1rpx solid#DFE6EE;
+}
+
+.cell {
+    height: 125rpx;
+    margin: 0 24rpx 0 8rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.cell-detele {
+    width: 92rpx;
+    height: 88rpx;
+    color: white;
+    text-align: center;
+    margin: auto 24rpx auto 0;
+}
+
+.cell-add {
+    width: 92rpx;
+    height: 88rpx;
+    color: white;
+    text-align: center;
+    margin: auto 24rpx auto 0;
+}
+
+.cell-description {
+    height: 100%;
+    font-size: 32rpx;
+    flex: 1;
+    color: #313541;
+    border-bottom: 1rpx solid #DFE6EE;
+}
+
+.cell-title-add {
+    margin: auto 0;
+    font-size: 32rpx;
+    color: #03A9F4;
+    line-height: 45rpx;
+}
+
+.info-container {
+    margin: 24rpx 32rpx 76rpx 32rpx;
+    background-color: white;
+    overflow: hidden;
+}
+
+.cell-view {
+    margin: auto 0;
+    padding: 0 32rpx;
+    height: 112rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+}
+
+.text-black {
+    font-size: 30rpx;
+    color: #313541;
+}
+
+.text-data {
+    color: #313541;
+    font-size: 30rpx;
+    font-weight: bold;
+    line-height: 42rpx;
+    margin: auto auto;
+}
+
+.text-time {
+    color: #313541;
+    font-size: 30rpx;
+    font-weight: bold;
+    line-height: 42rpx;
+    margin: auto auto auto 48rpx;
+}
+
+.input-name {
+    text-align: right;
+    flex-grow: 1;
+    font-weight: bold;
+}
+
+.text-three {
+    font-size: 30rpx;
+}
+
+button::after {
+    border: 0 solid transparent;
+}

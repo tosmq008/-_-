@@ -1,0 +1,53 @@
+<template name="eachItem">
+
+
+ 
+    <view bindlongtap="detailLongTap" bindtap="detailTap" bindtouchend="touchE" bindtouchmove="touchM"
+          bindtouchstart="touchS" class="template_view" data-obj="{{item}}" hoverClass="default-view-hover"
+          style="{{item.txtStyle}}">
+ 
+          
+        <view class="template_name {{item.deleted?'deleted-text':''}}" wx:if="{{!item.deleted}}">
+            <text class="template_type_{{item.type}}">
+                [{{item.type=='n'||item.type=='e'?'通知':item.type=='t'?'投票':item.type=='d'?'求祝福':'活动'}}]
+            </text>
+            {{item.type=='d'?item.content:item.title}}
+        </view>
+        <view class="template_name {{item.deleted?'deleted-text':''}}" wx:else>
+            <text class="template_type_gray">[已删除]</text>
+            {{item.type=='d'?item.content:item.title}}
+        </view>
+        <block wx:if="{{item.type=='t'}}">
+            <text class="template_descrption {{item.deleted?'deleted-text':''}}" wx:if="{{item.subtitle.length!=0}}">
+                {{item.subtitle}}
+            </text>
+        </block>
+        <block wx:elif="{{item.type!='d'}}" >
+    <text class="template_descrption {{item.deleted?'deleted-text':''}}" wx:if="{{item.content.length!=0}}"
+              >{{item.content}}
+        </text>
+
+        </block>
+    
+        <block wx:if="{{item.type!='t'&&item.keywords}}">
+            <text class="template_keywords {{item.deleted?'deleted-text':''}}" wx:if="{{item.keywords.length!=0}}">
+                {{item.keywords}}
+            </text>
+        </block>
+        <view class="template_bottom">
+            <view class="template_user">
+                <image class="{{item.deleted?'deleted-img':''}}" src="../../images/index-card-count.png"></image>
+                <text class="{{item.deleted?'deleted-text':''}}">{{item.num}}</text>
+            </view>
+            <view class="template_time">
+                <image class="{{item.deleted?'deleted-img':''}}" src="../../images/index-card-time.png"></image>
+                <text class="{{item.deleted?'deleted-text':''}}">{{item.time}}</text>
+            </view>
+        </view>
+        <image class="res-sign {{item.deleted?'deleted-img':''}}" src="../../images/redsign.png"
+               wx:if="{{item.type=='e'}}"></image>
+    </view>
+    <view catchtap="delItem" class="cell-del" data-item="{{item}}">
+        <text>删除</text>
+    </view>
+</template>

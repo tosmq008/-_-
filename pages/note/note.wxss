@@ -1,0 +1,32 @@
+page {
+    background: #efeff4;
+    min-height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sign-view {
+    display: flex;
+    background: #ffffff;
+    margin-top: 62rpx;
+    margin-left: 32rpx;
+    margin-right: 32rpx;
+    margin-bottom: auto;
+    border-radius: 4rpx;
+}
+
+.sign-view textarea {
+    margin: 32rpx 32rpx;
+    height: 164rpx;
+    color: black;
+    font-size: 30rpx;
+    width: 100%;
+}

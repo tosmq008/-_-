@@ -1,0 +1,300 @@
+.markdown-wrapper {
+    font-size: 32rpx;
+    background: white;
+}
+
+.markdown-wrapper>view {
+    margin: 7.5px 0;
+}
+
+view {
+    word-break: break-all;
+}
+
+.markdown-audio {
+    text-align: center;
+    overflow: hidden;
+}
+
+.markdown-file {
+    line-height: 0;
+    text-align: center;
+}
+
+.markdown-file>.markdown-file-default {
+    max-width: 100%;
+    min-width: 302px;
+    height: 65px;
+    background: #fcfcfc;
+    border: 1px solid #e0e0e0;
+    border-radius: 2.5px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.markdown-file-default>.markdown-file-left {
+    width: 65px;
+    height: 65px;
+    float: left;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAApxJREFUeJzt282rDXEcx/EXx+P1lLixsMJCohR5KCSSh4VSNhZkIfkD1LVQFMnSQjZEipSlYkEpdVOyoeRhQTd5yM4ChXQtZnSPwz13Zs6953s6fu+a5je/+X7n9zmfM7+HOZ3hP2dcxbw12IzJo6ilCqcwH2+rXqCKAX04g+f4WrXhFhmHGlbjDg5goB0N9+I7DrejsYK8wDPMbkdjGzCIWe1orCAvZJruq9Alx5eMr+X7n2UbagMbcVnJbl3WgE5nL06XSeg2A+AoDhUN7kYD4Dx2FAnsVgNquIEVIwWWGTD6sRjz8EY28o4VV3C8YOxNLBzm3FvswefhkieUELVA9uHJ1gMPGs735kIeYhV+4FVertXFvZctouqZhrV1x3NK6NrV5NwEozhjDci+9UG8zutmYm6+7cPjvL4fV/Pyp7q8QVzM6+fU5a5viDk3Cnqn5Nfa3iyozB3wL25gW93xkxK578Q/S7RswC1Da/DdJXNP1LW/Djtb1FKJVg24i0d5eX3J3JeGxoZFLeqoTKsGnFW9C1zXBV2gCJfQk5eX1tVfwMS8XMPBNmj5i6oGTJJNW41PhT15/QzZ6L5WNlD+ZjeW5PXXGq4XYkAZBvw5VY3l1pHT4BHZoqZP9oPIt8rSRqZxodQxbJK5Oj1YRxEK3QHd+jBUmGRAtIBokgHRAqJJBkQLiCYZEC0gmmRAtIBokgHRAqJJBkQLiCYZEC0gmmRAtIBokgHRAqJJBkQLiCYZEC0gmmRAtIBokgHRAqJJBkQLiCYZEC0gmmRAtIBokgHRAqIpa8BYviQxVjTVXNaAj/l+WTUtbWV5vv/QLKjKq7O3sVL2WkvUq7MjMRX78RRbmwVWMaAHx7BFB/zbexi+4x5O4kuwls7mF7jKca0KQ+cWAAAAAElFTkSuQmCC');
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+}
+
+.markdown-file-default>.markdown-file-right {
+    box-sizing: border-box;
+    height: 65px;
+    margin-left: 65px;
+    padding: 11px 16.5px 13.5px 15px;
+    overflow: hidden;
+}
+
+.markdown-file-right>.markdown-file-info {
+    margin-right: 70px;
+    overflow: hidden;
+}
+
+.markdown-file-info>.markdown-file-name {
+    height: 22.5px;
+    line-height: 22.5px;
+    margin-bottom: 3.5px;
+    font-size: 14px;
+    color: #353535;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.markdown-file-info>.markdown-file-desc {
+    height: 14.5px;
+    line-height: 14.5px;
+    font-size: 12px;
+    color: #888888;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.markdown-video {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 100%;
+    text-align: center;
+    max-height: 225px;
+    overflow: hidden;
+}
+
+.markdown-hr {
+    height: 1rpx;
+    width: 100%;
+    background-color: rgba(0,0,0,0.12);
+}
+
+.markdown-break {
+    display: block;
+}
+
+.markdown-image {
+    margin-top: 48rpx;
+    overflow: hidden;
+    text-align: center;
+}
+
+.markdown-image>image {
+    width: 100%;
+}
+
+.markdown-tr {
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.markdown-th,.markdown-td {
+    flex: 1;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    font-size: 28rpx;
+    border-left: 1px solid #e0e0e0;
+    word-break: break-all;
+}
+
+.markdown-td:last {
+    border-top: 1px solid #e0e0e0;
+}
+
+.markdown-th {
+    background: #f0f0f0;
+    border-top: 1px solid #e0e0e0;
+}
+
+.markdown-strong {
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+.markdown-em {
+    font-style: italic;
+    padding: 0 5px;
+}
+
+.markdown-del {
+    text-decoration: line-through;
+    padding: 0 5px;
+}
+
+.markdown-tel {
+    color: #09bb07;
+    padding: 0 5px;
+}
+
+.markdown-code {
+    background: #f0f0f0;
+    padding: 3px 5px;
+}
+
+.markdown-mark {
+    background-color: #FDF3C0;
+    padding: 3px 5px;
+}
+
+.markdown-ins {
+    text-decoration: underline;
+    padding: 0 5px;
+}
+
+.markdown-li view {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.markdown-ul .markdown-li::before {
+    content: '• ';
+}
+
+.markdown-ul .markdown-li .markdown-ul .markdown-li::before,.markdown-ol .markdown-li .markdown-ul .markdown-li::before {
+    content: '◦ ';
+}
+
+.markdown-ul .markdown-li .markdown-ul .markdown-li,.markdown-ol .markdown-li .markdown-ul .markdown-li,.markdown-ol .markdown-li .markdown-ol .markdown-li,.markdown-ul .markdown-li .markdown-ol .markdown-li {
+    padding-left: 1em;
+    display: block;
+}
+
+.markdown-ul .markdown-li:last {
+    margin-bottom: 1em;
+}
+
+.markdown-text {
+    margin: 48rpx 0 0 0;
+    padding: 0;
+    white-space: pre-wrap;
+    line-height: 50rpx;
+    word-wrap: break-word;
+}
+
+.markdown-inline {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.markdown-map {
+    height: 144rpx;
+    width: 100%;
+    text-align: center;
+    display: flex;
+}
+
+.markdown-map-loc {
+    width: 28rpx;
+    height: 40rpx;
+    margin: auto 10rpx auto auto;
+}
+
+.markdown-map text {
+    color: #5171B0;
+    font-size: 30rpx;
+    font-weight: bold;
+    line-height: 42rpx;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    margin: auto 0;
+    max-height: 42rpx;
+    max-width: 463rpx;
+    overflow: hidden;
+    display: -webkit-box;
+}
+
+.markdown-map-arrow {
+    width: 16rpx;
+    height: 26rpx;
+    margin: auto auto auto 5rpx;
+}
+
+.map {
+    margin-top: 15px;
+}
+
+.markdown-text-wrap {
+    display: block;
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;
+    line-height: 50rpx;
+    word-wrap: break-word;
+}
+
+.markdown-text-inline {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;
+    line-height: 50rpx;
+    word-wrap: break-word;
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+}
+
+.markdown-h1 {
+    font-size: 46rpx;
+    font-weight: bold;
+    position: relative;
+    top: -16rpx;
+}
+
+.markdown-h2 {
+    font-size: 40rpx;
+    font-weight: bold;
+    position: relative;
+    top: -6rpx;
+}
+
+.markdown-h3 {
+    font-size: 34rpx;
+    font-weight: bold;
+}
+
+.markdown-h4 {
+    margin: .37em 0;
+}
+
+.markdown-h5 {
+    font-size: .83em;
+    margin: 0.41em 0;
+}
+
+.markdown-h6 {
+    font-size: .75em;
+    margin: 0.42em 0;
+}
+
+.markdown-h1,.markdown-h2,.markdown-h3,.markdown-h4,.markdown-h5,.markdown-h6,.markdown-b,.markdown-strong {
+    font-weight: bolder;
+}

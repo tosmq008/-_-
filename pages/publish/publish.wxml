@@ -1,0 +1,39 @@
+<view class="container">
+    <form bindsubmit="formSubmit" reportSubmit="true">
+        <view class="money-view">
+            <text class="money-hint">总金额:</text>
+            <input bindinput="bindMoneyInput" class="money-num" confirmType="next" focus="true" name="money" placeholder="0.00" placeholderClass="placeholder-class" type="digit" value="{{money}}"></input>
+            <text class="money-unit">元</text>
+        </view>
+        <text class="number-hint">{{showAdvanced==true?'总金额最少10元，红包为定向红包':'总金额最少1元，红包为拼手气红包'}}</text>
+        <view class="money-num-view" hidden="{{showAdvanced}}">
+            <text class="money-hint">红包个数:</text>
+            <input bindinput="bindNumInput" class="money-num" confirmType="done" maxlength="3" name="num" placeholder="填写个数" placeholderClass="placeholder-class" type="number" value="{{num}}"></input>
+            <text class="money-unit">个</text>
+        </view>
+        <view class="pay-money">￥{{payMoney}}</view>
+        <view class="pay-money-hint">(需要额外支付￥{{serviceCharge}}服务费)</view>
+        <view class="info-container">
+            <view class="cell-view">
+                <text class="text-black">是否定向</text>
+                <view class="flex-padding"></view>
+                <switch bindchange="switchTargetChange" color="#03a9f4" name="designated" type="switch"></switch>
+            </view>
+            <view hidden="{{!showAdvanced}}">
+                <view class="cell-view">
+                    <text class="text-black">接收人姓名：</text>
+                    <input class="input-name text-black" cursorSpacing="60" name="des_name" placeholder="输入接收人姓名" placeholderClass="placeholder-class" value="{{des_name}}"></input>
+                </view>
+                <view class="cell-view">
+                    <text class="text-black">接收人手机：</text>
+                    <input bindinput="bindRecvCellInput" class="input-name text-black" cursorSpacing="60" maxlength="11" name="des_cell" placeholder="输入接收人手机号" placeholderClass="placeholder-class" type="number" value="{{des_cell}}"></input>
+                </view>
+                <view class="hint-text">
+        输入指定接收人手机号码，系统将发送验证码到该手机上，领取人凭验证码领取红包。
+        </view>
+            </view>
+        </view>
+        <view bindtap="faqTap" class="issue">常见问题</view>
+        <button class="default-btn-red {{moneyValid&&(numValid||showAdvanced)?'':'btn-red-disable'}}" formType="submit" hoverClass="{{moneyValid&&numValid?'default-btn-red-hover':''}}" size="default">生成红包通知</button>
+    </form>
+</view>

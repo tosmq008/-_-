@@ -1,0 +1,44 @@
+page {
+    background-color: white;
+}
+
+.bg {
+    flex-direction: column;
+    display: flex;
+    background-color: white;
+    height: 100%;
+    flex: 1;
+}
+
+.title {
+    color: #000000;
+    font-size: 34rpx;
+    line-height: 48rpx;
+    text-align: center;
+    margin: 56rpx auto 0 auto;
+}
+
+.des {
+    color: #000000;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    margin: 8rpx 50rpx 0 50rpx;
+}
+
+.edit_view {
+    display: flex;
+    margin: 114rpx 74rpx 0 74rpx;
+    flex-direction: row;
+}
+
+.contact-button {
+    height: 68rpx;
+    width: 272rpx;
+    border-radius: 34rpx;
+    background-color: #02A9F4;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    padding-top: 14rpx;
+}

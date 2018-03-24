@@ -1,0 +1,352 @@
+page {
+    background-color: #fff;
+}
+
+.container {
+    margin-bottom: 20rpx;
+}
+
+.deleted-view {
+    position: absolute;
+    top: 224rpx;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 514rpx;
+    height: 339rpx;
+    z-index: 100;
+}
+
+.outdate-view {
+    position: absolute;
+    top: 64rpx;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 543rpx;
+    height: 95rpx;
+    z-index: 100;
+}
+
+.deleted-view image {
+    width: 100%;
+    height: 100%;
+}
+
+.deleted-true {
+    border: 2rpx solid #d9d9d9!important;
+    background-color: white!important;
+}
+
+.content {
+    color: #313541;
+    margin-right: 32rpx;
+    margin-left: 32rpx;
+    min-height: 70%;
+}
+
+.content-title-view {
+    display: flex;
+    align-items: center;
+}
+
+.content-title {
+    font-weight: bold;
+    font-size: 48rpx;
+    color: #313541;
+    font-family: "PingFang SC";
+    line-height: 76rpx;
+    margin-top: 32rpx;
+    margin-bottom: 24rpx;
+}
+
+.content-desc {
+    font-size: 32rpx;
+    line-height: 51rpx;
+    color: #ffc107;
+    font-family: "PingFang SC";
+    font-weight: bold;
+    text-align: right;
+}
+
+.author {
+    margin-top: 32rpx;
+    font-size: 24rpx;
+    text-align: right;
+    display: block;
+    color: #b0bac5;
+}
+
+.menu {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 48rpx;
+}
+
+.menu-left {
+    margin-right: 28rpx;
+}
+
+.menu-right {
+    margin-left: 28rpx;
+}
+
+.menu-left-border {
+    padding: 0 24rpx;
+    float: right;
+    box-sizing: border-box;
+    height: 60rpx;
+    margin-right: 14rpx;
+    border-radius: 4rpx;
+    border: 2rpx solid #5171B0;
+}
+
+.menu-left-border button {
+    box-sizing: border-box;
+    background: transparent;
+    line-height: 60rpx;
+    color: #5171B0;
+    font-size: 26rpx;
+    text-align: center;
+    padding: 0;
+}
+
+.menu-left-border button::after {
+    box-sizing: border-box;
+    border: 0rpx solid transparent;
+}
+
+.menu-right-border {
+    padding: 0 24rpx;
+    float: left;
+    box-sizing: border-box;
+    height: 60rpx;
+    line-height: 60rpx;
+    flex-grow: 1;
+    color: #5171B0;
+    font-size: 26rpx;
+    background: transparent;
+    text-align: center;
+    border-radius: 4rpx;
+    border: 2rpx solid #5171B0;
+}
+
+.content-desc-view {
+    margin-bottom: 32rpx;
+}
+
+.item-false {
+    width: 686rpx;
+    min-height: 84rpx;
+    background-color: #fff;
+    margin-bottom: 12rpx;
+    display: flex;
+    border: 2rpx solid rgba(0,0,0,0.12);
+    transition: border 0.25s ease-in-out;
+    position: relative;
+}
+
+.item-true {
+    width: 686rpx;
+    min-height: 84rpx;
+    background-color: #fff;
+    margin-bottom: 12rpx;
+    display: flex;
+    border: 2rpx solid #03a9f4;
+    transition: border 0.25s ease-in-out;
+    position: relative;
+}
+
+.item-background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+@-webkit-keyframes type {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes type {
+    from {
+        width: 0;
+    }
+}
+
+.progress-anime {
+    background-color: #e1f5fe;
+    width: 0;
+    height: 100%;
+    animation: animateThis 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes animateThis {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes animateThis {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.item-content-view {
+    position: relative;
+    display: flex;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+    overflow: hidden;
+    z-index: 20;
+}
+
+.item-content {
+    color: #313541;
+    font-size: 30rpx;
+    margin: auto auto auto 24rpx;
+    align-items: center;
+    max-width: 330rpx;
+    overflow: hidden;
+}
+
+.item-checkmark {
+    margin: auto auto auto 38rpx;
+    height: 26.82px;
+    width: 35.18px;
+    color: #03a9f4;
+}
+
+.checkmark-anim {
+    animation: type 0.4s steps(60,end);
+}
+
+.item-number {
+    height: 42rpx;
+    color: #313541;
+    font-family: "PingFang SC";
+    font-size: 30rpx;
+    margin: auto 24rpx auto auto;
+    text-align: right;
+    z-index: 20;
+}
+
+.item-percentage {
+    height: 42rpx;
+    width: 78rpx;
+    color: #313541;
+    font-family: "PingFang SC";
+    font-size: 30rpx;
+    margin: auto 24rpx auto 0rpx;
+    text-align: right;
+    z-index: 20;
+}
+
+.content-attch {
+    height: 24rpx;
+    width: 100%;
+    margin: 0 0 32rpx 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mul,.voters {
+    color: #b0bac5;
+    font-family: "PingFang SC";
+    font-size: 24rpx;
+    line-height: 24rpx;
+}
+
+.add-button {
+    background: transparent;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex: 1;
+    z-index: 40;
+}
+
+.vote-user-view {
+    margin: 4rpx 0 16rpx 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.vote-user-each {
+    display: flex;
+    margin-right: 16rpx;
+    margin-bottom: 16rpx;
+    height: 40rpx;
+}
+
+.vote-user-avatar {
+    width: 40rpx;
+    height: 40rpx;
+    margin: auto 0;
+    border-radius: 50%;
+}
+
+.vote-user-name {
+    margin: auto 0 auto 8rpx;
+    color: #313541;
+    font-size: 24rpx;
+    line-height: 33rpx;
+}
+
+.jianjian-msg {
+    font-size: 20rpx;
+    color: #8091a5;
+    margin: 95rpx 59rpx 48rpx 59rpx;
+    text-align: center;
+    display: flex;
+}
+
+.share-bottom {
+    height: 88rpx;
+    position: fixed;
+    left: 48rpx;
+    right: 48rpx;
+    bottom: 156rpx;
+    border-radius: 6rpx;
+    background-color: #03a9f4;
+    font-size: 36rpx;
+    font-weight: 500;
+    letter-spacing: 1rpx;
+    line-height: 88rpx;
+    text-align: center;
+    color: white;
+}
+
+button::after {
+    border: 0rpx solid transparent;
+}
+
+.delete-bg {
+    display: flex;
+    height: 510rpx;
+}
+
+.delete-ntc {
+    height: 259rpx;
+    width: 260rpx;
+    margin: auto;
+}

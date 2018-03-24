@@ -1,0 +1,60 @@
+<form bindsubmit="formSubmit" class="container" reportSubmit="true">
+    <view class="title-container">
+        <input bindinput="bindTitleInput" class="title-input" focus="{{autofocus}}" name="title" placeholder="投票标题" placeholderClass="placeholder-class" value="{{title}}"></input>
+        <input class="title-description" name="description" placeholder="补充内容(选填)" placeholderClass="placeholder-class" value="{{subtitle}}"></input>
+        <view class="cell" wx:for="{{cellNum}}" wx:for-index="idx">
+            <image bindtap="deteleCell" class="cell-detele" data-item="{{idx}}" src="../../images/delete.png"></image>
+            <input bindinput="bindCellContentInput" class="cell-description" cursorSpacing="60" data-item="{{idx}}" name="cell{{idx}}" placeholder="选项" placeholderClass="placeholder-class" value="{{item}}"></input>
+        </view>
+        <view bindtap="addCell" class="cell">
+            <image class="cell-add" src="../../images/add.png"></image>
+            <text class="cell-title-add">添加选项</text>
+        </view>
+    </view>
+    <view class="info-container">
+        <view bindtap="bindAdvancedTap" class="cell-view" hoverClass="default-view-hover" style="z-index: 10;">
+            <text class="text-black">更多选项 (可选)</text>
+            <image animation="{{arrowAnime}}" mode="widthFix" src="../../images/arrow-up.png" style="width:20rpx; transform: rotate(180deg);"></image>
+        </view>
+        <view hidden="{{!showAdvanced}}">
+            <view class="cell-view">
+                <text class="text-black">是否多选</text>
+                <view class="flex-padding"></view>
+                <switch bindchange="bindMoreTap" checked="{{showMore}}" color="#03a9f4" name="more_choose" type="switch"></switch>
+            </view>
+            <view class="cell-view" hidden="{{!showMore}}">
+                <text class="text-black">每人最少选择</text>
+                <input bindinput="bindMoreLeastInput" class="input-name text-black" cursorSpacing="60" name="more_least" placeholder="{{v_min}}" placeholderClass="placeholder-class" type="digit" value="{{more_least}}"></input>
+            </view>
+            <view class="cell-view" hidden="{{!showMore}}">
+                <text class="text-black">每人最多选择</text>
+                <input bindinput="bindMoreMostInput" class="input-name text-black" cursorSpacing="60" name="more_most" placeholder="{{v_max}}" placeholderClass="placeholder-class" type="digit" value="{{more_most}}"></input>
+            </view>
+            <view class="cell-view">
+                <text class="text-black">是否匿名</text>
+                <view class="flex-padding"></view>
+                <switch checked="{{anonymous}}" color="#03a9f4" name="name_choose" type="switch"></switch>
+            </view>
+            <view class="cell-view">
+                <text class="text-black">发起人：</text>
+                <input class="input-name text-black" cursorSpacing="60" name="leader" placeholderClass="placeholder-class" value="{{author}}"></input>
+            </view>
+            <view class="cell-view">
+                <text class="text-black">禁止转发</text>
+                <view class="flex-padding"></view>
+                <switch checked="{{forward}}" color="#03a9f4" name="no_forward" type="switch"></switch>
+            </view>
+            <view class="cell-view">
+                <text class="text-black">截止日期</text>
+                <view class="flex-padding"></view>
+                <picker bindchange="bindDateChange" mode="date" start="{{todayStr}}" value="{{endDayPicker}}">
+                    <text class="text-data">{{endDay}}</text>
+                </picker>
+                <picker bindchange="bindTimeChange" mode="time" value="{{endTime}}">
+                    <text class="text-time">{{endTime}}</text>
+                </picker>
+            </view>
+        </view>
+    </view>
+    <button class="default-btn {{!titleValid?'btn-disable':''}}" formType="submit" hoverClass="{{titleValid?'default-btn-hover':''}}" size="default">确定</button>
+</form>

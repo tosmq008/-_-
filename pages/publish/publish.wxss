@@ -1,0 +1,142 @@
+.container {
+    padding-bottom: 99rpx;
+}
+
+.money-view {
+    height: 112rpx;
+    width: 686rpx;
+    background-color: #fff;
+    margin: 75rpx 32rpx 0rpx 32rpx;
+    align-items: center;
+    display: flex;
+}
+
+.money-hint {
+    margin: 35rpx 0 35rpx 32rpx;
+    width: 150rpx;
+    height: 42rpx;
+    color: #313541;
+    font-family: "PingFang SC";
+    font-size: 30rpx;
+    line-height: 42rpx;
+}
+
+.money-num {
+    margin: 35rpx 24rpx 35rpx auto;
+    height: 42rpx;
+    color: #313541;
+    font-family: "PingFang SC";
+    font-size: 30rpx;
+    line-height: 42rpx;
+    text-align: right;
+    overflow: hidden;
+}
+
+.money-unit {
+    margin: 35rpx 32rpx 35rpx 0rpx;
+    height: 42rpx;
+    width: 30rpx;
+    color: #313541;
+    font-family: "PingFang SC";
+    font-size: 30rpx;
+    font-weight: bold;
+    line-height: 42rpx;
+    text-align: right;
+}
+
+.number-hint {
+    height: 33rpx;
+    color: #b0bac5;
+    font-family: "PingFang SC";
+    font-size: 24rpx;
+    line-height: 33rpx;
+    margin: 10rpx auto 0rpx 64rpx;
+}
+
+.money-num-view {
+    height: 112rpx;
+    width: 686rpx;
+    background-color: #fff;
+    margin: 32rpx 32rpx 0rpx 32rpx;
+    align-items: center;
+    display: flex;
+}
+
+.pay-money {
+    height: 135rpx;
+    width: 100%;
+    text-align: center;
+    color: #313541;
+    font-family: "PingFang SC";
+    font-size: 96rpx;
+    font-weight: bold;
+    line-height: 135rpx;
+    margin-top: 39rpx;
+}
+
+.pay-money-hint {
+    height: 33rpx;
+    width: 100%;
+    text-align: center;
+    color: #b0bac5;
+    font-family: "PingFang SC";
+    font-size: 24rpx;
+    line-height: 33rpx;
+}
+
+.issue {
+    height: 42rpx;
+    width: 120rpx;
+    color: #5171b0;
+    font-family: "PingFang SC";
+    font-size: 30rpx;
+    line-height: 42rpx;
+    text-align: center;
+    margin: 0 auto 20rpx auto;
+}
+
+.placeholder-class {
+    height: 42rpx;
+    color: #b0bac5;
+}
+
+.info-container {
+    margin: 57rpx 32rpx 76rpx 32rpx;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.cell-view {
+    margin: auto 0;
+    padding: 0 32rpx;
+    height: 112rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+}
+
+.text-black {
+    font-size: 30rpx;
+    color: #313541;
+}
+
+.text-data {
+    color: #313541;
+    font-size: 30rpx;
+    font-weight: bold;
+    line-height: 42rpx;
+    margin: auto auto;
+}
+
+.input-name {
+    text-align: right;
+}
+
+.hint-text {
+    font-size: 24rpx;
+    line-height: 33rpx;
+    color: #b0bac5;
+    margin: 28rpx 32rpx 0 32rpx;
+}

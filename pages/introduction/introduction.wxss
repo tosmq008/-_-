@@ -1,0 +1,74 @@
+.bg {
+    flex-direction: column;
+    display: flex;
+    margin-top: 18rpx;
+}
+
+.mode {
+    flex-direction: row;
+    width: 702rpx;
+    height: 148rpx;
+    margin: 12rpx 24rpx;
+    display: flex;
+    background-color: #fff;
+}
+
+.inform-icon {
+    width: 72rpx;
+    height: 72rpx;
+    margin: 40rpx;
+}
+
+.activity-icon {
+    width: 60rpx;
+    height: 57rpx;
+    margin: 44rpx 46rpx 47rpx 46rpx;
+}
+
+.vote-icon {
+    width: 48rpx;
+    height: 48rpx;
+    margin: 50rpx 52rpx;
+}
+
+.pray-icon {
+    width: 44rpx;
+    height: 57rpx;
+    margin: 45rpx 54rpx;
+}
+
+.arrow {
+    height: 24rpx;
+    width: 15rpx;
+    margin: 62rpx 32rpx auto auto;
+}
+
+.content {
+    flex-direction: column;
+    display: flex;
+    text-align: left;
+    overflow: hidden;
+    margin: auto 0;
+}
+
+.title {
+    height: 50rpx;
+    width: 208rpx;
+    color: #313541;
+    font-family: "PingFang SC";
+    font-size: 36rpx;
+}
+
+.hint {
+    height: 33rpx;
+    color: #B0BAC5;
+    font-family: "PingFang SC";
+    font-size: 24rpx;
+    margin-top: 13rpx;
+}
+
+.introduce-img {
+    height: 1256rpx;
+    width: 561rpx;
+    margin: 83rpx 70rpx;
+}

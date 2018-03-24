@@ -1,0 +1,27 @@
+<view class="bg">
+    <view bindtap="informTap" class="mode">
+        <image class="inform-icon" src="../../images/inform.png"></image>
+        <view class="content">
+            <text class="title">群通知</text>
+            <text class="hint">发布群内通知，确认群友是否已读</text>
+        </view>
+        <image class="arrow" src="../../images/arrow-right-gray.png"></image>
+    </view>
+    <view bindtap="avtivityTap" class="mode">
+        <image class="inform-icon" src="../../images/activity.png"></image>
+        <view class="content">
+            <text class="title">群活动</text>
+            <text class="hint">组织群内活动，查看群友报名信息</text>
+        </view>
+        <image class="arrow" src="../../images/arrow-right-gray.png"></image>
+    </view>
+    <view bindtap="voteTap" class="mode">
+        <image class="inform-icon" src="../../images/vote.png"></image>
+        <view class="content">
+            <text class="title">群投票</text>
+            <text class="hint">发起群内投票，快速收集群友意见</text>
+        </view>
+        <image class="arrow" src="../../images/arrow-right-gray.png"></image>
+    </view>
+    <image class="introduce-img" src="http://ntc-qn.jianjian.tv/tutorial.png"></image>
+</view>

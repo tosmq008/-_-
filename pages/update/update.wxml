@@ -1,0 +1,97 @@
+<view class="authorization-view" wx:if="{{!hasAuthorized}}">
+    <image src="../../images/logo.png"></image>
+    <text>小程序需要您的微信授权才能使用哦~</text>
+    <button bindgetuserinfo="requestGetUserInfo" bindtap="requestAuthorization" openType="getUserInfo">请授权</button>
+</view>
+<block wx:else>
+    <import src="../../.././../widget/image-uploader/image-uploader.wxml"></import>
+    <view class="container">
+        <form bindsubmit="formSubmit" reportSubmit="true">
+            <view class="top-cell-view " name="template" wx:if="{{type!='red'}}">
+                <view class="{{template==229||template==205?'':'content_view'}}">
+                    <view class="header">
+                        <image class="header-title-image" mode="aspectFill" src="{{qiniuImage}}" wx:if="{{template==206}}"></image>
+                        <image class="header-title-image-205" mode="aspectFill" src="http://ntc-qn.jianjian.tv/award.png" wx:elif="{{template==205}}"></image>
+                        <image class="header-title-image-220" mode="aspectFill" src="../../images/{{template}}.png" wx:elif="{{template==229}}"></image>
+                        <image class="header-title-image" mode="aspectFill" src="../../images/{{template}}.png" wx:else></image>
+                        <view class="header-hint" wx:if="{{template!=204&&template!=205&&template!=206&&template!=229}}">
+                            <text class="document_num">本群发 〔{{year}}〕 *** 号</text>
+                        </view>
+                    </view>
+                </view>
+                <view bindtap="bindTemplateTap" class="change-model" value="{{template}}">
+                    <text>更换模板</text>
+                </view>
+            </view>
+            <view class="title-container" style="{{type=='red'?'margin-top:25rpx':''}}" wx:if="{{type!='bls'}}">
+                <input bindconfirm="bindTitleConfirm" bindinput="bindTitleInput" class="title-input" cursorSpacing="60" focus="{{titlefocus}}" maxlength="30" name="title" placeholder="领奖人姓名" placeholderStyle="color: #c7c7c7;" value="{{title}}" wx:if="{{template==205}}"></input>
+                <input bindconfirm="bindTitleConfirm" bindinput="bindTitleInput" class="title-input" cursorSpacing="60" focus="{{titlefocus}}" maxlength="30" name="title" placeholder="{{type=='act'?'活动标题':'通知标题'}}" placeholderStyle="color: #c7c7c7;" value="{{title}}" wx:else></input>
+            </view>
+            <view class="content-container">
+                <textarea bindinput="bindContentInput" class="content-textarea" cursorSpacing="60" focus="{{descfocus}}" maxlength="1024" name="content" placeholder="领奖人称号" placeholderStyle="color: #c7c7c7;" value="{{content}}" wx:if="{{template==205}}"></textarea>
+                <textarea bindinput="bindContentInput" class="content-textarea" cursorSpacing="60" focus="{{descfocus}}" maxlength="1024" name="content" placeholder="{{type=='act'?'输入活动内容':'输入通知内容'}}" placeholderStyle="color: #c7c7c7;" value="{{content}}" wx:else></textarea>
+                <text class="content-num {{contentLength+img.uploadedImagesPaths.length*59>10?'red-text':''}}" wx:if="{{template==205}}">({{contentLength+img.uploadedImagesPaths.length*59}}/10)</text>
+                <text class="content-num {{contentLength+img.uploadedImagesPaths.length*59+addressLength>1000?'red-text':''}}" wx:else>({{contentLength+img.uploadedImagesPaths.length*59+addressLength}}/1000)</text>
+            </view>
+            <template is="image-uploader" data="{{...img}}" wx:if="{{type!='bls'&&template!=205}}"></template>
+            <view class="info-container">
+                <view bindtap="bindAdvancedTap" class="cell-view" hoverClass="default-view-hover" style="z-index: 10;" wx:if="{{type!='bls'}}">
+                    <text class="text-black" style="flex-grow: 1;width:150rpx;">更多选项 (可选)</text>
+                    <image animation="{{arrowAnime}}" mode="widthFix" src="../../images/arrow-up.png" style="width:20rpx; transform: rotate(180deg);"></image>
+                </view>
+                <view hidden="{{!showAdvanced}}">
+                    <view class="cell-view" wx:if="{{type!='bls'}}">
+                        <text class="text-black" style="flex-grow: 1;width:150rpx;">{{type=='act'?'发起人：':'署名：'}}</text>
+                        <input class="input-name text-black" cursorSpacing="60" name="leader" placeholderStyle="color: #c7c7c7;" value="{{author}}"></input>
+                    </view>
+                    <view class="cell-view" wx:if="{{type!='bls'&&template!=205&&template!=206&&template!=229}}">
+                        <text class="text-black" style="flex-grow: 1;width:150rpx;">文号：</text>
+                        <input class="input-name text-three" cursorSpacing="60" maxlength="3" name="fileNumber" placeholder="自定义文号" placeholderStyle="color: #c7c7c7;" type="number" value="{{file_no}}"></input>
+                    </view>
+                    <view class="cell-view" style="height:88rpx">
+                        <text class="text-black">禁止转发：</text>
+                        <view class="flex-padding"></view>
+                        <switch checked="{{type=='red'||forward==0}}" color="#03a9f4" name="forward" type="switch"></switch>
+                    </view>
+                    <view bindtap="bindKeywordsTap" class="cell-view" hoverClass="default-view-hover" name="keywords" value="{{keywords}}">
+                        <text class="text-black" style="flex-grow: 1;width:150rpx;">添加关键词：</text>
+                        <view class="keywords-detail">
+                            <text>{{keywordsStr}}</text>
+                            <image src="../../images/arrow-right-gray.png" style="height:24rpx;width:15rpx"></image>
+                        </view>
+                    </view>
+                    <view class="cell-view" wx:if="{{type=='act'}}">
+                        <text class="text-black" style="flex-grow: 1;width:150rpx;">人数限制：</text>
+                        <input class="input-name text-three" cursorSpacing="60" maxlength="3" name="personNumber" placeholder="未设置" placeholderClass="default-color" placeholderStyle="color: #c7c7c7;" type="number"></input>
+                    </view>
+                    <view class="cell-view" style="height:90rpx" wx:if="{{type=='act'}}">
+                        <text class="number-hint">提示：当报名人数达到限制人数时会结束活动报名</text>
+                    </view>
+                    <view class="hr" wx:if="{{type=='act'}}"></view>
+                    <view bindtap="chooseLocation" class="cell-view" style="overflow:hidden;" wx:if="{{type=='act'}}">
+                        <image src="/images/map-icon.png" style="height:40rpx; width:28rpx;"></image>
+                        <text class="input-name  text-three {{isReadyLocation?'location-active':'location-hint'}}">{{activityLocation}}</text>
+                    </view>
+                    <block wx:if="{{type=='act'}}">
+                        <view class="cell-view" style="margin-top:24rpx;height:88rpx">
+                            <text class="text-gray">需要报名人信息</text>
+                        </view>
+                        <view class="cell-view" style="height:88rpx">
+                            <text class="text-black">姓名</text>
+                            <view class="flex-padding"></view>
+                            <switch color="#03a9f4" name="cell_name" type="switch"></switch>
+                        </view>
+                        <view class="cell-view" style="height:88rpx">
+                            <text class="text-black">手机号</text>
+                            <view class="flex-padding"></view>
+                            <switch color="#03a9f4" name="cell_req" type="switch"></switch>
+                        </view>
+                    </block>
+                </view>
+            </view>
+            <button class="default-btn-red {{contentValid&&titleValid?'':'btn-red-disable'}}" formType="submit" hoverClass="{{contentValid&&titleValid?'default-btn-red-hover':''}}" size="default" wx:if="{{type=='red'}}">下一步</button>
+            <button class="default-btn {{contentValid?'':'btn-disable'}}" formType="submit" hoverClass="{{contentValid?'default-btn-hover':''}}" size="default" wx:elif="{{type=='bls'}}">确定</button>
+            <button class="default-btn {{contentValid&&titleValid?'':'btn-disable'}}" formType="submit" hoverClass="{{contentValid&&titleValid?'default-btn-hover':''}}" size="default" wx:else>确定</button>
+        </form>
+    </view>
+</block>
