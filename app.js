@@ -95,7 +95,7 @@ App({
             success: function(e) {
 
               e.data=kkk;
-          debugger
+          
                 if (0 == e.data.code) {
                     var a = e.data.data;
                     wx.setStorageSync("user_id", a.user.user_id), wx.setStorageSync("user_token", a.user_token), 

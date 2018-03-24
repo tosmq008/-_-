@@ -1,4 +1,4 @@
-<import src="../../.././../widget/markdown/markdown.wxml"></import>
+<import src="../../widget/markdown/markdown.wxml"></import>
 <view class="container {{deleted?'deleted-overflow-hidden':''}}" style="{{type=='act'&&!joind&&!enough&&!showHint?'padding-bottom: 99rpx;':'padding-bottom: 1rpx;'}}" wx:if="{{hasAuthorized}}">
     <view bindtap="reRequest" class="network-error-view" wx:if="{{isNetworkError}}">
         <image src="../../images/reload.png"></image>
